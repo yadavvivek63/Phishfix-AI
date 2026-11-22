@@ -10,7 +10,7 @@ import { useRef, useState } from "react";
 type Tab = "qr" | "image";
 
 export default function QrScannerPage() {
-  const [tab] = useState<Tab>("qr");
+  const [tab, setTab] = useState<Tab>("qr");
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const [result, setResult] = useState<ScanResult | null>(null);
@@ -73,11 +73,13 @@ export default function QrScannerPage() {
         <div className="space-y-4">
           <div className="inline-flex rounded-xl border border-black/[0.06] bg-[#f9f9f9] p-1">
             <button
+              onClick={() => { setTab("qr"); setResult(null); setErr(""); }}
               className={`flex items-center gap-2 rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${tab === "qr" ? "bg-blue-50 text-[#2563eb]" : "text-[#858585] hover:text-[#111111]"}`}
             >
               <QrCode className="h-4 w-4" /> QR Code
             </button>
             <button
+              onClick={() => { setTab("image"); setResult(null); setErr(""); }}
               className={`flex items-center gap-2 rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${tab === "image" ? "bg-blue-50 text-[#2563eb]" : "text-[#858585] hover:text-[#111111]"}`}
             >
               <ScanText className="h-4 w-4" /> Screenshot (OCR)
