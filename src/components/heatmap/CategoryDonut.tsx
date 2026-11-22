@@ -32,7 +32,7 @@ export function CategoryDonut({ data }: { data: CategoryDatum[] }) {
  <div className="flex items-center gap-3">
  <div className="relative shrink-0" style={{ width: size, height: size }}>
  <svg width={size} height={size} className="-rotate-90">
- <circle cx={size / 2} cy={size / 2} r={r} stroke="#1e3350" strokeWidth={stroke} fill="none" />
+ <circle cx={size / 2} cy={size / 2} r={r} stroke="#f0efec" strokeWidth={stroke} fill="none" />
  {segments.map((s) => (
  <circle
  key={s.key}
@@ -48,8 +48,8 @@ export function CategoryDonut({ data }: { data: CategoryDatum[] }) {
  ))}
  </svg>
  <div className="absolute inset-0 flex flex-col items-center justify-center">
- <span className="text-lg font-bold text-text">{total >= 1000 ? `${(total / 1000).toFixed(1)}k` : total}</span>
- <span className="text-[9px] uppercase tracking-wider text-muted">scams</span>
+ <span className="text-lg font-bold text-[#111111]">{total >= 1000 ? `${(total / 1000).toFixed(1)}k` : total}</span>
+ <span className="text-[9px] uppercase tracking-wider text-[#858585]">scams</span>
  </div>
  </div>
 
@@ -57,8 +57,8 @@ export function CategoryDonut({ data }: { data: CategoryDatum[] }) {
  {segments.map((s) => (
  <div key={s.key} className="flex items-center gap-1.5 text-[11px]">
  <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: s.color }} />
- <span className="text-muted">{s.name}</span>
- <span className="ml-auto font-semibold text-text">{s.pct}%</span>
+ <span className="text-[#858585]">{s.name}</span>
+ <span className="ml-auto font-semibold text-[#111111]">{s.pct}%</span>
  </div>
  ))}
  </div>

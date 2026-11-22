@@ -86,12 +86,12 @@ export default function HeatmapPage() {
         title="India Scam Heatmap"
         subtitle="Interactive state-wise view of scam reports across India. Data is aggregated and privacy-protected — no individual information is shown."
       >
-        <div className="inline-flex rounded-xl border border-line bg-navy-2 p-1">
+        <div className="inline-flex rounded-xl border border-black/[0.06] bg-[#f9f9f9] p-1">
           {(["week", "month"] as const).map((p) => (
             <button
               key={p}
               onClick={() => setPeriod(p)}
-              className={`rounded-lg px-3 py-1.5 text-xs font-medium capitalize transition-colors ${period === p ? "bg-cyan/15 text-cyan" : "text-muted hover:text-text"}`}
+              className={`rounded-lg px-3 py-1.5 text-xs font-medium capitalize transition-colors ${period === p ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
             >
               {p === "week" ? "Weekly" : "Monthly"}
             </button>
@@ -100,10 +100,10 @@ export default function HeatmapPage() {
       </PageIntro>
 
       <div className="mb-5 grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <StatCard label="Total reports" value={data ? Math.round(data.totals.reports * multiplier).toLocaleString() : "—"} icon={TrendingUp} accent="text-danger" />
-        <StatCard label="States covered" value={data?.totals.states ?? "—"} icon={Map} accent="text-cyan" />
-        <StatCard label="Top category" value="Fake KYC" icon={Filter} accent="text-warn" />
-        <StatCard label="Demo data" value="Illustrative" icon={Users} accent="text-muted" />
+        <StatCard label="Total reports" value={data ? Math.round(data.totals.reports * multiplier).toLocaleString() : "—"} icon={TrendingUp} accent="text-[#ef4444]" />
+        <StatCard label="States covered" value={data?.totals.states ?? "—"} icon={Map} accent="text-[#713cff]" />
+        <StatCard label="Top category" value="Fake KYC" icon={Filter} accent="text-[#f59e0b]" />
+        <StatCard label="Demo data" value="Illustrative" icon={Users} accent="text-[#858585]" />
       </div>
 
       <div className="grid gap-5 lg:grid-cols-3">
@@ -118,7 +118,7 @@ export default function HeatmapPage() {
                 const st = data?.points.find((p) => p.state === e.target.value) ?? null;
                 setSelected(st);
               }}
-              className="rounded-lg border border-line bg-navy-2 px-3 py-1.5 text-xs text-text focus:border-cyan/50 focus:outline-none"
+              className="rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-1.5 text-xs text-[#111111] focus:border-purple-400 focus:outline-none"
             >
               {(data?.points ?? []).map((p) => (
                 <option key={p.state} value={p.state}>
@@ -151,8 +151,8 @@ export default function HeatmapPage() {
 
             <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 700 }}>
               {categoryTotals.length > 0 && (
-                <div className="absolute right-3 top-3 max-w-[260px] rounded-xl border border-line/80 bg-card/95 p-3 shadow-xl backdrop-blur" style={{ pointerEvents: "auto" }}>
-                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-cyan">
+                <div className="absolute right-3 top-3 max-w-[260px] rounded-xl border border-black/[0.06] bg-white/95 p-3 shadow-xl backdrop-blur" style={{ pointerEvents: "auto" }}>
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#713cff]">
                     Reports by category{period ? ` (${period})` : ""}
                   </p>
                   <CategoryDonut data={categoryTotals} />
@@ -182,7 +182,7 @@ export default function HeatmapPage() {
             </div>
           </div>
           {selected && (
-            <p className="mt-2 text-center text-xs text-muted">
+            <p className="mt-2 text-center text-xs text-[#858585]">
               {selected.reports.toLocaleString()} reports in {selected.state} · KYC {selected.scams.kyc} · Delivery {selected.scams.delivery} · UPI {selected.scams.upi}
             </p>
           )}
@@ -198,10 +198,10 @@ export default function HeatmapPage() {
                 return (
                   <div key={c.key}>
                     <div className="mb-1 flex justify-between text-xs">
-                      <span className="text-muted">{c.name}</span>
-                      <span className="font-medium text-text">{pct}%</span>
+                      <span className="text-[#858585]">{c.name}</span>
+                      <span className="font-medium text-[#111111]">{pct}%</span>
                     </div>
-                    <div className="h-2 overflow-hidden rounded-full bg-navy-2">
+                    <div className="h-2 overflow-hidden rounded-full bg-[#f9f9f9]">
                       <div
                         className="h-full rounded-full transition-all"
                         style={{ width: `${pct}%`, background: CATEGORY_COLORS[c.key] || "#8aa0bd" }}
@@ -212,7 +212,7 @@ export default function HeatmapPage() {
               })}
             </div>
           ) : (
-            <p className="text-xs text-muted">Loading…</p>
+            <p className="text-xs text-[#858585]">Loading…</p>
           )}
         </Card>
       </div>
@@ -221,13 +221,13 @@ export default function HeatmapPage() {
         <h3 className="mb-3 text-sm font-semibold">Top states by reports</h3>
         <ResponsiveContainer width="100%" height={260}>
           <BarChart data={barData} layout="vertical" margin={{ left: 8, right: 16 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#1e3350" horizontal={false} />
-            <XAxis type="number" stroke="#8aa0bd" fontSize={11} tickLine={false} axisLine={false} />
-            <YAxis dataKey="state" type="category" stroke="#8aa0bd" fontSize={11} tickLine={false} axisLine={false} width={110} />
+            <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" horizontal={false} />
+            <XAxis type="number" stroke="#858585" fontSize={11} tickLine={false} axisLine={false} />
+            <YAxis dataKey="state" type="category" stroke="#858585" fontSize={11} tickLine={false} axisLine={false} width={110} />
             <Tooltip contentStyle={{ background: "#101d30", border: "1px solid #1e3350", borderRadius: 8, fontSize: 12 }} cursor={{ fill: "rgba(53,213,233,0.05)" }} />
             <Bar dataKey="reports" radius={[0, 6, 6, 0]}>
               {barData.map((_, i) => (
-                <Cell key={i} fill="#35d5e9" fillOpacity={1 - i * 0.05} />
+                <Cell key={i} fill="#713cff" fillOpacity={1 - i * 0.05} />
               ))}
             </Bar>
           </BarChart>
@@ -236,12 +236,12 @@ export default function HeatmapPage() {
 
       <Card className="mt-5 p-5">
         <div className="mb-3 flex items-center gap-2">
-          <MapPin className="h-4 w-4 text-cyan" />
+          <MapPin className="h-4 w-4 text-[#713cff]" />
           <h3 className="text-sm font-semibold">Specific locations</h3>
-          <span className="text-xs text-muted">— click a city to view it on the map</span>
+          <span className="text-xs text-[#858585]">— click a city to view it on the map</span>
         </div>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {cities.length === 0 && <p className="text-xs text-muted">Loading locations…</p>}
+          {cities.length === 0 && <p className="text-xs text-[#858585]">Loading locations…</p>}
           {cities.map((c) => {
             const isActive = selectedCity?.city === c.city;
             return (
@@ -251,27 +251,27 @@ export default function HeatmapPage() {
                   setSelectedCity(c);
                   setSelected(null);
                 }}
-                className={`rounded-xl border p-3 text-left transition-colors ${isActive ? "border-cyan/50 bg-cyan/5" : "border-line/60 bg-navy-2/50 hover:border-cyan/30"}`}
+                className={`rounded-xl border p-3 text-left transition-colors ${isActive ? "border-purple-400 bg-purple-50/50" : "border-black/[0.06] bg-[#f9f9f9]/50 hover:border-purple-200"}`}
               >
                 <div className="flex items-center justify-between gap-2">
                   <span className="flex items-center gap-1.5 text-sm font-medium">
-                    <MapPin className="h-3.5 w-3.5 text-cyan" /> {c.city}
+                    <MapPin className="h-3.5 w-3.5 text-[#713cff]" /> {c.city}
                   </span>
-                  <span className="text-xs text-muted">{c.reports.toLocaleString()}</span>
+                  <span className="text-xs text-[#858585]">{c.reports.toLocaleString()}</span>
                 </div>
-                <p className="mt-1 text-[11px] text-muted">{c.state} · {c.top}</p>
+                <p className="mt-1 text-[11px] text-[#858585]">{c.state} · {c.top}</p>
               </button>
             );
           })}
         </div>
         {selectedCity && (
-          <p className="mt-3 rounded-lg bg-cyan/5 p-3 text-xs text-muted">
-            <span className="font-semibold text-cyan">{selectedCity.city}</span> — {selectedCity.reports.toLocaleString()} reports · KYC {selectedCity.scams.kyc} · Delivery {selectedCity.scams.delivery} · UPI {selectedCity.scams.upi} · Phishing {selectedCity.scams.phishing} · QR {selectedCity.scams.qr}
+          <p className="mt-3 rounded-lg bg-purple-50/50 p-3 text-xs text-[#858585]">
+            <span className="font-semibold text-[#713cff]">{selectedCity.city}</span> — {selectedCity.reports.toLocaleString()} reports · KYC {selectedCity.scams.kyc} · Delivery {selectedCity.scams.delivery} · UPI {selectedCity.scams.upi} · Phishing {selectedCity.scams.phishing} · QR {selectedCity.scams.qr}
           </p>
         )}
       </Card>
 
-      <p className="mt-4 text-center text-xs text-muted">
+      <p className="mt-4 text-center text-xs text-[#858585]">
         Aggregated demo dataset — figures are illustrative and not live statistics.
       </p>
     </div>

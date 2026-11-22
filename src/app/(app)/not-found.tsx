@@ -13,15 +13,15 @@ export default function AppNotFound() {
     >
       <Link
         href="/dashboard"
-        className="inline-flex items-center gap-2 rounded-xl bg-cyan px-5 py-2.5 text-sm font-semibold text-navy transition-transform hover:scale-[1.02]"
+        className="inline-flex items-center gap-2 rounded-xl purple-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
       >
         <Home className="h-4 w-4" /> Go to dashboard
       </Link>
       <Link
         href="/"
-        className="inline-flex items-center gap-2 rounded-xl border border-line bg-navy-2 px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-cyan/50"
+        className="inline-flex items-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-5 py-2.5 text-sm font-semibold text-[#111111] transition-colors hover:border-purple-400"
       >
-        <ArrowLeft className="h-4 w-4 text-cyan" /> Back to home
+        <ArrowLeft className="h-4 w-4 text-[#713cff]" /> Back to home
       </Link>
     </StatusScreen>
   );

@@ -23,8 +23,8 @@ export function GoogleMapEmbed({
 
   return (
     <div
-      className="relative overflow-hidden rounded-xl border border-line/60"
-      style={{ height, background: "#0b1627" }}
+      className="relative overflow-hidden rounded-xl border border-black/[0.06]"
+      style={{ height, background: "#f3f2f0" }}
     >
       <iframe
         key={`${lat},${lng},${zoom}`}
@@ -42,7 +42,7 @@ export function GoogleMapEmbed({
         href={external}
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute bottom-3 right-3 z-[600] inline-flex items-center gap-1.5 rounded-lg border border-line bg-card/95 px-3 py-1.5 text-[11px] font-medium text-text shadow-lg backdrop-blur transition-colors hover:border-cyan/50 hover:text-cyan"
+        className="absolute bottom-3 right-3 z-[600] inline-flex items-center gap-1.5 rounded-lg border border-black/[0.06] bg-white/95 px-3 py-1.5 text-[11px] font-medium text-[#111111] shadow-lg backdrop-blur transition-colors hover:border-purple-400 hover:text-[#713cff]"
       >
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
@@ -53,13 +53,13 @@ export function GoogleMapEmbed({
       </a>
 
       {label && (
-        <span className="absolute left-3 top-3 z-[600] rounded-lg border border-line/80 bg-card/90 px-2.5 py-1 text-[11px] font-medium text-cyan shadow-lg backdrop-blur">
+        <span className="absolute left-3 top-3 z-[600] rounded-lg border border-black/[0.06] bg-white/90 px-2.5 py-1 text-[11px] font-medium text-[#713cff] shadow-lg backdrop-blur">
           {label}
         </span>
       )}
 
       {!GOOGLE_KEY && (
-        <span className="absolute bottom-3 left-3 z-[600] rounded-lg border border-warn/30 bg-warn/10 px-2.5 py-1 text-[10px] font-medium text-warn shadow-lg backdrop-blur">
+        <span className="absolute bottom-3 left-3 z-[600] rounded-lg border border-amber-100 bg-amber-50 px-2.5 py-1 text-[10px] font-medium text-[#f59e0b] shadow-lg backdrop-blur">
           No API key — using fallback
         </span>
       )}

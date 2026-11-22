@@ -8,7 +8,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
  <div className="flex min-w-0 flex-1 flex-col lg:pl-64">
  <TopBar />
  <main className="flex-1 px-5 py-6 lg:px-8 lg:py-8">{children}</main>
- <footer className="border-t border-line/60 px-8 py-4 text-center text-xs text-muted">
+ <footer className="border-t border-black/[0.06] px-8 py-4 text-center text-xs text-[#858585]">
  Phishfix AI · Detect. Investigate. Protect. · Not a substitute for official cybercrime reporting (cybercrime.gov.in · 1930)
  </footer>
  </div>

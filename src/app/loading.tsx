@@ -6,7 +6,7 @@ export default function RootLoading() {
           <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-cyan/40" />
           <span className="relative m-auto mt-2 inline-flex h-4 w-4 animate-spin rounded-full border-2 border-cyan border-t-transparent" />
         </span>
-        <p className="text-sm text-muted">Loading Phishfix AI…</p>
+        <p className="text-sm text-[#858585]">Loading Phishfix AI…</p>
       </div>
     </div>
   );

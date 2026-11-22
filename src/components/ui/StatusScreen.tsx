@@ -17,9 +17,9 @@ export function StatusScreen({
   children?: ReactNode;
 }) {
   const toneClass =
-    tone === "danger" ? "text-danger" : tone === "warn" ? "text-warn" : "text-cyan";
+    tone === "danger" ? "text-[#ef4444]" : tone === "warn" ? "text-[#f59e0b]" : "text-[#713cff]";
   const bgClass =
-    tone === "danger" ? "bg-danger/10" : tone === "warn" ? "bg-warn/10" : "bg-cyan/10";
+    tone === "danger" ? "bg-red-50" : tone === "warn" ? "bg-amber-50" : "bg-purple-50";
 
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">
@@ -29,8 +29,8 @@ export function StatusScreen({
       {code && (
         <span className={`mb-2 font-mono text-5xl font-bold ${toneClass}`}>{code}</span>
       )}
-      <h1 className="text-2xl font-bold tracking-tight text-text">{title}</h1>
-      <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted">{description}</p>
+      <h1 className="text-2xl font-bold tracking-tight text-[#111111]">{title}</h1>
+      <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#858585]">{description}</p>
       {children && <div className="mt-6 flex flex-wrap items-center justify-center gap-3">{children}</div>}
     </div>
   );

@@ -58,10 +58,10 @@ export function ScanForm({
       <ScanResultView result={result} />
     </div>
   ) : (
-    <div className="flex h-full min-h-[240px] flex-col items-center justify-center rounded-2xl border border-dashed border-line/70 p-8 text-center">
-      <ScanLine className="mb-3 h-10 w-10 text-muted/50" />
-      <p className="text-sm font-medium text-muted">Results appear here</p>
-      <p className="mt-1 max-w-xs text-xs text-muted/70">
+    <div className="flex h-full min-h-[240px] flex-col items-center justify-center rounded-2xl border border-dashed border-black/[0.06]/70 p-8 text-center">
+      <ScanLine className="mb-3 h-10 w-10 text-[#858585]/50" />
+      <p className="text-sm font-medium text-[#858585]">Results appear here</p>
+      <p className="mt-1 max-w-xs text-xs text-[#858585]/70">
         Submit {label.toLowerCase()} to run the local heuristic analysis and get a risk verdict.
       </p>
     </div>
@@ -71,7 +71,7 @@ export function ScanForm({
     <div className={singleColumn ? "" : "grid gap-5 lg:grid-cols-2"}>
       <div>
         <div className="rounded-2xl glass p-5">
-          <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-muted">
+          <label className="mb-2 block text-xs font-medium uppercase tracking-wider text-[#858585]">
             {label}
           </label>
           {rows ? (
@@ -81,7 +81,7 @@ export function ScanForm({
               placeholder={placeholder}
               rows={rows}
               maxLength={maxLength}
-              className="w-full resize-none rounded-xl border border-line bg-navy-2 p-4 text-sm leading-relaxed text-text placeholder:text-muted/50 focus:border-cyan/50 focus:outline-none"
+              className="w-full resize-none rounded-xl border border-black/[0.06] bg-[#f9f9f9] p-4 text-sm leading-relaxed text-[#111111] placeholder:text-[#858585]/50 focus:border-purple-400 focus:outline-none"
             />
           ) : (
             <input
@@ -90,15 +90,15 @@ export function ScanForm({
               onKeyDown={(e) => e.key === "Enter" && run()}
               placeholder={placeholder}
               maxLength={maxLength}
-              className="w-full rounded-xl border border-line bg-navy-2 px-4 py-3 text-sm text-text placeholder:text-muted/50 focus:border-cyan/50 focus:outline-none"
+              className="w-full rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-4 py-3 text-sm text-[#111111] placeholder:text-[#858585]/50 focus:border-purple-400 focus:outline-none"
             />
           )}
-          {err && <p className="mt-2 text-xs text-danger">{err}</p>}
+          {err && <p className="mt-2 text-xs text-[#ef4444]">{err}</p>}
           <div className="mt-4 flex items-center gap-2">
             <button
               onClick={run}
               disabled={busy}
-              className="inline-flex items-center gap-2 rounded-xl bg-cyan px-5 py-2.5 text-sm font-semibold text-navy transition-transform hover:scale-[1.02] disabled:opacity-50"
+              className="inline-flex items-center gap-2 rounded-xl purple-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-50"
             >
               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <ScanLine className="h-4 w-4" />}
               {busy ? "Analyzing…" : buttonLabel}
@@ -109,14 +109,14 @@ export function ScanForm({
                 setResult(null);
                 setErr("");
               }}
-              className="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-sm text-muted transition-colors hover:text-text"
+              className="inline-flex items-center gap-2 rounded-xl border border-black/[0.06] px-4 py-2.5 text-sm text-[#858585] transition-colors hover:text-[#111111]"
             >
               <Eraser className="h-4 w-4" /> Clear
             </button>
           </div>
           {examples && examples.length > 0 && (
             <div className="mt-4">
-              <p className="mb-2 text-xs text-muted">Try an example:</p>
+              <p className="mb-2 text-xs text-[#858585]">Try an example:</p>
               <div className="flex flex-wrap gap-2">
                 {examples.map((ex, i) => (
                   <button
@@ -126,7 +126,7 @@ export function ScanForm({
                       setErr("");
                       setResult(null);
                     }}
-                    className="rounded-lg border border-line/60 px-2.5 py-1 text-[11px] text-muted transition-colors hover:border-cyan/40 hover:text-cyan"
+                    className="rounded-lg border border-black/[0.06] px-2.5 py-1 text-[11px] text-[#858585] transition-colors hover:border-purple-200 hover:text-[#713cff]"
                   >
                     Example {i + 1}
                   </button>

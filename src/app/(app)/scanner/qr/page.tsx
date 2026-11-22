@@ -71,14 +71,14 @@ export default function QrScannerPage() {
 
       <div className="grid gap-5 lg:grid-cols-2">
         <div className="space-y-4">
-          <div className="inline-flex rounded-xl border border-line bg-navy-2 p-1">
+          <div className="inline-flex rounded-xl border border-black/[0.06] bg-[#f9f9f9] p-1">
             <button
-              className={`flex items-center gap-2 rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${tab === "qr" ? "bg-cyan/15 text-cyan" : "text-muted hover:text-text"}`}
+              className={`flex items-center gap-2 rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${tab === "qr" ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
             >
               <QrCode className="h-4 w-4" /> QR Code
             </button>
             <button
-              className={`flex items-center gap-2 rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${tab === "image" ? "bg-cyan/15 text-cyan" : "text-muted hover:text-text"}`}
+              className={`flex items-center gap-2 rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${tab === "image" ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
             >
               <ScanText className="h-4 w-4" /> Screenshot (OCR)
             </button>
@@ -88,18 +88,18 @@ export default function QrScannerPage() {
             onDragOver={(e) => e.preventDefault()}
             onDrop={onDrop}
             onClick={() => inputRef.current?.click()}
-            className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-line bg-navy-2/40 px-6 py-12 text-center transition-colors hover:border-cyan/40"
+            className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-black/[0.06] bg-[#f9f9f9]/40 px-6 py-12 text-center transition-colors hover:border-purple-200"
           >
             {preview ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={preview} alt="preview" className="mb-4 max-h-48 rounded-lg object-contain" />
             ) : (
-              <Upload className="mb-3 h-10 w-10 text-muted/50" />
+              <Upload className="mb-3 h-10 w-10 text-[#858585]/50" />
             )}
-            <p className="text-sm font-medium text-muted">
+            <p className="text-sm font-medium text-[#858585]">
               {busy ? "Processing…" : "Click or drop an image here"}
             </p>
-            <p className="mt-1 text-xs text-muted/70">
+            <p className="mt-1 text-xs text-[#858585]/70">
               {tab === "qr" ? "PNG/JPG containing a QR code" : "PNG/JPG screenshot with text"} · max 8MB
             </p>
             <input
@@ -111,21 +111,21 @@ export default function QrScannerPage() {
             />
           </div>
 
-          {err && <p className="text-xs text-danger">{err}</p>}
+          {err && <p className="text-xs text-[#ef4444]">{err}</p>}
         </div>
 
         <div>
-          {busy && <Loader2 className="mx-auto h-8 w-8 animate-spin text-cyan" />}
+          {busy && <Loader2 className="mx-auto h-8 w-8 animate-spin text-[#713cff]" />}
           {!busy && result && (
             <div className="rounded-2xl glass p-5">
               <ScanResultView result={result} />
             </div>
           )}
           {!busy && !result && (
-            <div className="flex h-full min-h-[240px] flex-col items-center justify-center rounded-2xl border border-dashed border-line/70 p-8 text-center">
-              <QrCode className="mb-3 h-10 w-10 text-muted/50" />
-              <p className="text-sm font-medium text-muted">Results appear here</p>
-              <p className="mt-1 max-w-xs text-xs text-muted/70">
+            <div className="flex h-full min-h-[240px] flex-col items-center justify-center rounded-2xl border border-dashed border-black/[0.06]/70 p-8 text-center">
+              <QrCode className="mb-3 h-10 w-10 text-[#858585]/50" />
+              <p className="text-sm font-medium text-[#858585]">Results appear here</p>
+              <p className="mt-1 max-w-xs text-xs text-[#858585]/70">
                 Upload a QR code or screenshot to extract and analyze its content.
               </p>
             </div>

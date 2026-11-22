@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-navy: #08111f;
-  --color-navy-2: #0b1627;
-  --color-card: #101d30;
-  --color-card-2: #14243d;
-  --color-line: #1e3350;
-  --color-cyan: #35d5e9;
-  --color-cyan-soft: #7ee7f2;
-  --color-text: #edf5ff;
-  --color-muted: #8aa0bd;
-  --color-danger: #ff5a6a;
-  --color-warn: #ffb020;
-  --color-success: #35e08a;
+  /* Premium Neumorphism — Light Purple */
+  --color-navy: #111111;
+  --color-navy-2: #1a1a1a;
+  --color-card: #ffffff;
+  --color-card-2: #fafafa;
+  --color-line: rgba(0, 0, 0, 0.06);
+  --color-cyan: #713cff;
+  --color-cyan-soft: #a78bfa;
+  --color-text: #111111;
+  --color-muted: #858585;
+  --color-danger: #ef4444;
+  --color-warn: #f59e0b;
+  --color-success: #22c55e;
 
   --font-sans: var(--font-geist-sans), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
@@ -24,7 +25,7 @@
 
 html,
 body {
-  background: var(--color-navy);
+  background: #f3f2f0;
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -32,51 +33,110 @@ body {
 
 body {
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(53, 213, 233, 0.08), transparent 60%),
-    radial-gradient(900px 500px at -10% 10%, rgba(53, 213, 233, 0.05), transparent 55%),
-    var(--color-navy);
+    radial-gradient(1200px 600px at 80% -10%, rgba(113, 60, 255, 0.06), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(167, 139, 250, 0.04), transparent 55%),
+    #f3f2f0;
   min-height: 100vh;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0b1627;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e3350;
+  background: rgba(0, 0, 0, 0.08);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2b4870;
+  background: rgba(0, 0, 0, 0.14);
 }
 
 @layer utilities {
   .glass {
-    background: linear-gradient(180deg, rgba(20, 36, 61, 0.85), rgba(16, 29, 48, 0.75));
-    border: 1px solid rgba(53, 213, 233, 0.1);
-    backdrop-filter: blur(14px);
-    box-shadow: 0 10px 40px -20px rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 4px 12px rgba(0, 0, 0, 0.06),
+      0 16px 40px rgba(0, 0, 0, 0.04);
   }
-  .glow-cyan {
-    box-shadow: 0 0 0 1px rgba(53, 213, 233, 0.3), 0 0 30px -8px rgba(53, 213, 233, 0.5);
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.05),
+      0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+  .glow-purple {
+    box-shadow:
+      0 0 0 1px rgba(113, 60, 255, 0.15),
+      0 4px 20px -4px rgba(113, 60, 255, 0.3),
+      0 0 48px -10px rgba(113, 60, 255, 0.15);
   }
   .text-glow {
-    text-shadow: 0 0 20px rgba(53, 213, 233, 0.45);
+    text-shadow: 0 0 24px rgba(113, 60, 255, 0.35);
+  }
+  .neo {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow:
+      8px 8px 20px rgba(0, 0, 0, 0.06),
+      -8px -8px 20px rgba(255, 255, 255, 0.8);
+  }
+  .neo-inset {
+    background: #f3f2f0;
+    border-radius: 1rem;
+    box-shadow:
+      inset 4px 4px 10px rgba(0, 0, 0, 0.06),
+      inset -4px -4px 10px rgba(255, 255, 255, 0.8);
+  }
+  .neo-btn {
+    background: linear-gradient(135deg, #ffffff, #f3f2f0);
+    border-radius: 999px;
+    box-shadow:
+      4px 4px 12px rgba(0, 0, 0, 0.08),
+      -4px -4px 12px rgba(255, 255, 255, 0.9);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+  }
+  .neo-btn:hover {
+    box-shadow:
+      6px 6px 16px rgba(0, 0, 0, 0.12),
+      -6px -6px 16px rgba(255, 255, 255, 0.95);
+    transform: translateY(-1px);
+  }
+  .neo-btn:active {
+    box-shadow:
+      inset 3px 3px 8px rgba(0, 0, 0, 0.08),
+      inset -3px -3px 8px rgba(255, 255, 255, 0.9);
+    transform: translateY(0);
   }
   .grid-bg {
     background-image:
-      linear-gradient(rgba(53, 213, 233, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(53, 213, 233, 0.05) 1px, transparent 1px);
-    background-size: 36px 36px;
+      linear-gradient(rgba(113, 60, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(113, 60, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
   .scrollbar-none {
     scrollbar-width: none;
   }
   .scrollbar-none::-webkit-scrollbar {
     display: none;
+  }
+  .purple-gradient {
+    background: linear-gradient(135deg, #713cff 0%, #a78bfa 100%);
+  }
+  .purple-text-gradient {
+    background: linear-gradient(135deg, #713cff 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
 
@@ -90,10 +150,10 @@ body {
 
 @keyframes float-y {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50% { transform: translateY(-10px); }
 }
 .animate-float {
-  animation: float-y 5s ease-in-out infinite;
+  animation: float-y 6s ease-in-out infinite;
 }
 
 @keyframes shimmer {
@@ -101,38 +161,38 @@ body {
   100% { background-position: 200% 0; }
 }
 .skeleton {
-  background: linear-gradient(90deg, #14243d 25%, #1e3350 37%, #14243d 63%);
+  background: linear-gradient(90deg, #f0efec 25%, #e8e7e4 37%, #f0efec 63%);
   background-size: 200% 100%;
   animation: shimmer 1.4s ease-in-out infinite;
 }
 
-/* ---------- Leaflet heatmap map ---------- */
+/* Leaflet map */
 .hm-map-wrap {
   position: relative;
   overflow: hidden;
   border-radius: 0.75rem;
-  border: 1px solid rgba(30, 51, 80, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 .hm-map-wrap .leaflet-container {
   z-index: 0;
-  background: #08111f;
+  background: #f3f2f0;
   font-family: var(--font-sans);
 }
 .hm-map-wrap .leaflet-control-attribution {
-  background: rgba(16, 29, 48, 0.85);
-  color: #8aa0bd;
+  background: rgba(255, 255, 255, 0.9);
+  color: #858585;
   font-size: 9px;
 }
 .hm-map-wrap .leaflet-control-attribution a {
-  color: #35d5e9;
+  color: #713cff;
 }
 .hm-map-wrap .leaflet-control-zoom a {
-  background: #101d30;
-  color: #edf5ff;
-  border-color: #1e3350;
+  background: #ffffff;
+  color: #111111;
+  border-color: rgba(0, 0, 0, 0.08);
 }
 .hm-map-wrap .leaflet-bar {
-  border-color: #1e3350;
+  border-color: rgba(0, 0, 0, 0.08);
 }
 .hm-map-hint {
   position: absolute;
@@ -143,10 +203,11 @@ body {
   pointer-events: none;
   padding: 3px 10px;
   border-radius: 999px;
-  background: rgba(16, 29, 48, 0.9);
-  color: #8aa0bd;
+  background: rgba(255, 255, 255, 0.92);
+  color: #858585;
   font-size: 10px;
   white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 .hm-pin-wrap {
   background: none;
@@ -164,52 +225,52 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  opacity: 0.22;
+  opacity: 0.25;
   box-shadow: 0 0 0 2px var(--pin-color);
 }
 .hm-pin-num {
   position: relative;
   font-size: calc(var(--pin-size) * 0.45);
   font-weight: 700;
-  color: #edf5ff;
+  color: #111111;
   line-height: 1;
 }
 .hm-popup-title {
   margin: 0;
-  color: #edf5ff;
+  color: #111111;
   font-size: 13px;
   font-weight: 600;
 }
 .hm-popup-sub {
   margin: 1px 0 0;
-  color: #8aa0bd;
+  color: #858585;
   font-size: 11px;
 }
 .hm-popup-reports {
   margin: 6px 0 0;
-  color: #35d5e9;
+  color: #713cff;
   font-size: 12px;
   font-weight: 600;
 }
-/* Leaflet popup styling to match theme */
 .hm-map-wrap .leaflet-popup-content-wrapper {
-  background: #101d30;
-  color: #edf5ff;
-  border: 1px solid #1e3350;
+  background: #ffffff;
+  color: #111111;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 .hm-map-wrap .leaflet-popup-tip {
-  background: #101d30;
+  background: #ffffff;
 }
 .hm-map-wrap .leaflet-tooltip {
-  background: #101d30;
-  border: 1px solid #1e3350;
-  color: #edf5ff;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #111111;
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 .hm-map-wrap .leaflet-tooltip-top:before {
-  border-top-color: #101d30;
+  border-top-color: #ffffff;
 }
 
 @keyframes fade-up {

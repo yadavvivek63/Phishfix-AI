@@ -133,11 +133,11 @@ export default function EmergencyReportPage() {
         />
 
         <Card className="mx-auto max-w-2xl p-8 text-center">
-          <span className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-success/15 text-success">
+          <span className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-[#22c55e]">
             <CheckCircle2 className="h-8 w-8" />
           </span>
-          <h2 className="text-xl font-bold text-text">Report Prepared</h2>
-          <p className="mx-auto mt-2 max-w-md text-sm text-muted">
+          <h2 className="text-xl font-bold text-[#111111]">Report Prepared</h2>
+          <p className="mx-auto mt-2 max-w-md text-sm text-[#858585]">
             Your report has been prepared with all the details you provided. Submit it to the official cybercrime portal below.
           </p>
 
@@ -146,42 +146,42 @@ export default function EmergencyReportPage() {
               href="https://cybercrime.gov.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-danger py-3 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#ef4444] py-3 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
             >
               <Globe className="h-4 w-4" /> Submit on cybercrime.gov.in
             </a>
             <a
               href="tel:1930"
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-danger/40 bg-danger/5 py-3 text-sm font-semibold text-danger transition-colors hover:bg-danger/15"
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-red-100 bg-red-50 py-3 text-sm font-semibold text-[#ef4444] transition-colors hover:bg-red-100"
             >
               <Phone className="h-4 w-4" /> Call 1930 (Cyber Crime Helpline)
             </a>
             <div className="flex gap-3">
               <button
                 onClick={copyReport}
-                className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-line py-2.5 text-xs font-medium text-muted transition-colors hover:border-cyan/40 hover:text-cyan"
+                className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-black/[0.06] py-2.5 text-xs font-medium text-[#858585] transition-colors hover:border-purple-200 hover:text-[#713cff]"
               >
                 <Copy className="h-3.5 w-3.5" /> {copied ? "Copied!" : "Copy report text"}
               </button>
               <button
                 onClick={downloadReport}
-                className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-line py-2.5 text-xs font-medium text-muted transition-colors hover:border-cyan/40 hover:text-cyan"
+                className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-black/[0.06] py-2.5 text-xs font-medium text-[#858585] transition-colors hover:border-purple-200 hover:text-[#713cff]"
               >
                 <Download className="h-3.5 w-3.5" /> Download report
               </button>
             </div>
           </div>
 
-          <div className="mt-6 rounded-xl border border-line/60 bg-navy-2/50 p-4 text-left">
-            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted">Report Summary</h3>
-            <pre className="whitespace-pre-wrap break-words font-mono text-[11px] leading-relaxed text-text/80">
+          <div className="mt-6 rounded-xl border border-black/[0.06] bg-[#f9f9f9]/50 p-4 text-left">
+            <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#858585]">Report Summary</h3>
+            <pre className="whitespace-pre-wrap break-words font-mono text-[11px] leading-relaxed text-[#111111]/80">
               {reportText}
             </pre>
           </div>
 
           <button
             onClick={reset}
-            className="mt-4 text-xs text-muted transition-colors hover:text-cyan"
+            className="mt-4 text-xs text-[#858585] transition-colors hover:text-[#713cff]"
           >
             ← File another report
           </button>
@@ -202,7 +202,7 @@ export default function EmergencyReportPage() {
       <div className="mb-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
         <a
           href="tel:1930"
-          className="flex items-center justify-center gap-2 rounded-xl border border-danger/40 bg-danger/10 py-3 text-sm font-bold text-danger transition-colors hover:bg-danger/20"
+          className="flex items-center justify-center gap-2 rounded-xl border border-red-100 bg-red-50 py-3 text-sm font-bold text-[#ef4444] transition-colors hover:bg-[#ef4444]/20"
         >
           <Phone className="h-4 w-4" /> Call 1930 — Cyber Crime Helpline
         </a>
@@ -210,9 +210,9 @@ export default function EmergencyReportPage() {
           href="https://cybercrime.gov.in"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-xl border border-line bg-navy-2 py-3 text-sm font-semibold text-text transition-colors hover:border-cyan/50"
+          className="flex items-center justify-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-purple-400"
         >
-          <Globe className="h-4 w-4 text-cyan" /> Visit cybercrime.gov.in
+          <Globe className="h-4 w-4 text-[#713cff]" /> Visit cybercrime.gov.in
         </a>
       </div>
 
@@ -223,13 +223,13 @@ export default function EmergencyReportPage() {
               <div key={s} className="flex items-center gap-2">
                 <span
                   className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold transition-colors ${
-                    step >= s ? "bg-cyan text-navy" : "bg-navy-2 text-muted"
+                    step >= s ? "purple-gradient text-white" : "bg-[#f9f9f9] text-[#858585]"
                   }`}
                 >
                   {s}
                 </span>
                 {s < 3 && (
-                  <span className={`h-0.5 w-12 rounded-full transition-colors ${step > s ? "bg-cyan" : "bg-line"}`} />
+                  <span className={`h-0.5 w-12 rounded-full transition-colors ${step > s ? "bg-[#713cff]" : "bg-black/[0.08]"}`} />
                 )}
               </div>
             ))}
@@ -238,18 +238,18 @@ export default function EmergencyReportPage() {
           {step === 1 && (
             <div className="animate-fade-up space-y-4">
               <h2 className="text-lg font-semibold">Your Information</h2>
-              <p className="text-xs text-muted">Fields marked with * are required.</p>
+              <p className="text-xs text-[#858585]">Fields marked with * are required.</p>
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <Field label="Full name *" value={form.fullName} onChange={(v) => update("fullName", v)} placeholder="As per your ID" />
                 <Field label="Phone number *" value={form.phone} onChange={(v) => update("phone", v)} placeholder="+91 XXXXX XXXXX" type="tel" />
                 <Field label="Email" value={form.email} onChange={(v) => update("email", v)} placeholder="you@example.com" type="email" />
                 <div>
-                  <label className="mb-1 block text-xs text-muted">State / UT *</label>
+                  <label className="mb-1 block text-xs text-[#858585]">State / UT *</label>
                   <select
                     value={form.state}
                     onChange={(e) => update("state", e.target.value)}
-                    className="w-full rounded-lg border border-line bg-navy-2 px-3 py-2 text-sm focus:border-cyan/50 focus:outline-none"
+                    className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-purple-400 focus:outline-none"
                   >
                     <option value="">Select state</option>
                     {STATES.map((s) => (
@@ -264,7 +264,7 @@ export default function EmergencyReportPage() {
                 <button
                   onClick={nextStep}
                   disabled={!canProceed}
-                  className="inline-flex items-center gap-2 rounded-xl bg-cyan px-5 py-2.5 text-sm font-semibold text-navy transition-transform hover:scale-[1.02] disabled:opacity-40"
+                  className="inline-flex items-center gap-2 rounded-xl purple-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-40"
                 >
                   Next <FileText className="h-4 w-4" />
                 </button>
@@ -275,15 +275,15 @@ export default function EmergencyReportPage() {
           {step === 2 && (
             <div className="animate-fade-up space-y-4">
               <h2 className="text-lg font-semibold">Incident Details</h2>
-              <p className="text-xs text-muted">Describe what happened. More details help authorities act faster.</p>
+              <p className="text-xs text-[#858585]">Describe what happened. More details help authorities act faster.</p>
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <div>
-                  <label className="mb-1 block text-xs text-muted">Type of cybercrime *</label>
+                  <label className="mb-1 block text-xs text-[#858585]">Type of cybercrime *</label>
                   <select
                     value={form.incidentType}
                     onChange={(e) => update("incidentType", e.target.value)}
-                    className="w-full rounded-lg border border-line bg-navy-2 px-3 py-2 text-sm focus:border-cyan/50 focus:outline-none"
+                    className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-purple-400 focus:outline-none"
                   >
                     <option value="">Select type</option>
                     {INCIDENT_TYPES.map((t) => (
@@ -293,11 +293,11 @@ export default function EmergencyReportPage() {
                 </div>
                 <Field label="Date of incident *" value={form.incidentDate} onChange={(v) => update("incidentDate", v)} type="date" />
                 <div>
-                  <label className="mb-1 block text-xs text-muted">Platform / Channel</label>
+                  <label className="mb-1 block text-xs text-[#858585]">Platform / Channel</label>
                   <select
                     value={form.platform}
                     onChange={(e) => update("platform", e.target.value)}
-                    className="w-full rounded-lg border border-line bg-navy-2 px-3 py-2 text-sm focus:border-cyan/50 focus:outline-none"
+                    className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-purple-400 focus:outline-none"
                   >
                     <option value="">Select platform</option>
                     {PLATFORMS.map((p) => (
@@ -320,14 +320,14 @@ export default function EmergencyReportPage() {
               <div className="flex justify-between pt-2">
                 <button
                   onClick={() => setStep(1)}
-                  className="rounded-xl border border-line px-4 py-2.5 text-sm text-muted transition-colors hover:text-text"
+                  className="rounded-xl border border-black/[0.06] px-4 py-2.5 text-sm text-[#858585] transition-colors hover:text-[#111111]"
                 >
                   ← Back
                 </button>
                 <button
                   onClick={nextStep}
                   disabled={!canProceed}
-                  className="inline-flex items-center gap-2 rounded-xl bg-cyan px-5 py-2.5 text-sm font-semibold text-navy transition-transform hover:scale-[1.02] disabled:opacity-40"
+                  className="inline-flex items-center gap-2 rounded-xl purple-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-40"
                 >
                   Next <FileText className="h-4 w-4" />
                 </button>
@@ -338,7 +338,7 @@ export default function EmergencyReportPage() {
           {step === 3 && (
             <div className="animate-fade-up space-y-4">
               <h2 className="text-lg font-semibold">Additional Evidence</h2>
-              <p className="text-xs text-muted">Provide any details that can help track the fraudster (optional).</p>
+              <p className="text-xs text-[#858585]">Provide any details that can help track the fraudster (optional).</p>
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <Field label="Transaction ID / UTR" value={form.transactionId} onChange={(v) => update("transactionId", v)} placeholder="Bank transaction reference" />
@@ -355,11 +355,11 @@ export default function EmergencyReportPage() {
                 rows={3}
               />
 
-              <div className="rounded-xl border border-warn/30 bg-warn/5 p-3">
+              <div className="rounded-xl border border-amber-100 bg-amber-50 p-3">
                 <div className="flex items-start gap-2">
-                  <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-warn" />
-                  <p className="text-[11px] leading-relaxed text-muted">
-                    <span className="font-semibold text-warn">Important:</span> Once you submit, you'll be redirected to cybercrime.gov.in to file the official report. You'll also be able to copy or download your report text to paste into the portal.
+                  <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-[#f59e0b]" />
+                  <p className="text-[11px] leading-relaxed text-[#858585]">
+                    <span className="font-semibold text-[#f59e0b]">Important:</span> Once you submit, you'll be redirected to cybercrime.gov.in to file the official report. You'll also be able to copy or download your report text to paste into the portal.
                   </p>
                 </div>
               </div>
@@ -367,13 +367,13 @@ export default function EmergencyReportPage() {
               <div className="flex justify-between pt-2">
                 <button
                   onClick={() => setStep(2)}
-                  className="rounded-xl border border-line px-4 py-2.5 text-sm text-muted transition-colors hover:text-text"
+                  className="rounded-xl border border-black/[0.06] px-4 py-2.5 text-sm text-[#858585] transition-colors hover:text-[#111111]"
                 >
                   ← Back
                 </button>
                 <button
                   onClick={submit}
-                  className="inline-flex items-center gap-2 rounded-xl bg-danger px-5 py-2.5 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#ef4444] px-5 py-2.5 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
                 >
                   <Send className="h-4 w-4" /> Prepare Report
                 </button>
@@ -383,25 +383,25 @@ export default function EmergencyReportPage() {
         </Card>
 
         <div className="space-y-4">
-          <Card className="border-danger/30 p-5">
-            <div className="mb-3 flex items-center gap-2 text-danger">
+          <Card className="border-red-100 p-5">
+            <div className="mb-3 flex items-center gap-2 text-[#ef4444]">
               <ShieldAlert className="h-4 w-4" />
               <h3 className="text-sm font-semibold">Act Fast — Golden Hour</h3>
             </div>
-            <p className="text-xs leading-relaxed text-muted">
+            <p className="text-xs leading-relaxed text-[#858585]">
               Early reporting significantly improves the chance of freezing your money. Don't wait — report within the first few hours.
             </p>
-            <ul className="mt-3 space-y-2 text-xs text-muted">
-              <li className="flex items-center gap-2"><Phone className="h-3.5 w-3.5 text-danger" /> Call <span className="font-semibold text-text">1930</span> immediately</li>
-              <li className="flex items-center gap-2"><Globe className="h-3.5 w-3.5 text-danger" /> Report at <span className="font-semibold text-text">cybercrime.gov.in</span></li>
-              <li className="flex items-center gap-2"><FileText className="h-3.5 w-3.5 text-danger" /> Save all evidence (SMS, screenshots, IDs)</li>
-              <li className="flex items-center gap-2"><AlertTriangle className="h-3.5 w-3.5 text-danger" /> Contact your bank to block transactions</li>
+            <ul className="mt-3 space-y-2 text-xs text-[#858585]">
+              <li className="flex items-center gap-2"><Phone className="h-3.5 w-3.5 text-[#ef4444]" /> Call <span className="font-semibold text-[#111111]">1930</span> immediately</li>
+              <li className="flex items-center gap-2"><Globe className="h-3.5 w-3.5 text-[#ef4444]" /> Report at <span className="font-semibold text-[#111111]">cybercrime.gov.in</span></li>
+              <li className="flex items-center gap-2"><FileText className="h-3.5 w-3.5 text-[#ef4444]" /> Save all evidence (SMS, screenshots, IDs)</li>
+              <li className="flex items-center gap-2"><AlertTriangle className="h-3.5 w-3.5 text-[#ef4444]" /> Contact your bank to block transactions</li>
             </ul>
           </Card>
 
           <Card className="p-5">
             <h3 className="mb-2 text-sm font-semibold">What to Report</h3>
-            <ul className="space-y-1.5 text-xs text-muted">
+            <ul className="space-y-1.5 text-xs text-[#858585]">
               {[
                 "Fake KYC / identity theft",
                 "UPI / payment fraud",
@@ -413,7 +413,7 @@ export default function EmergencyReportPage() {
                 "Job / task / lottery scams",
               ].map((t) => (
                 <li key={t} className="flex items-start gap-2">
-                  <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-cyan" />
+                  <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-[#713cff]" />
                   {t}
                 </li>
               ))}
@@ -422,12 +422,12 @@ export default function EmergencyReportPage() {
 
           <Card className="p-5">
             <h3 className="mb-2 text-sm font-semibold">Need Help?</h3>
-            <p className="text-xs leading-relaxed text-muted">
+            <p className="text-xs leading-relaxed text-[#858585]">
               If you're unsure whether something is a scam, use the AI Cyber Assistant or scan the message/link first.
             </p>
             <a
               href="/assistant"
-              className="mt-3 inline-flex items-center gap-2 rounded-lg border border-line px-3 py-2 text-xs font-medium text-cyan transition-colors hover:border-cyan/40"
+              className="mt-3 inline-flex items-center gap-2 rounded-lg border border-black/[0.06] px-3 py-2 text-xs font-medium text-[#713cff] transition-colors hover:border-purple-200"
             >
               <ShieldAlert className="h-3.5 w-3.5" /> Ask the AI Assistant
             </a>
@@ -451,14 +451,14 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-1 block text-xs text-muted">{label}</label>
+      <label className="mb-1 block text-xs text-[#858585]">{label}</label>
       {textarea ? (
         <textarea
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           rows={rows ?? 3}
-          className="w-full resize-none rounded-lg border border-line bg-navy-2 px-3 py-2 text-sm leading-relaxed placeholder:text-muted/40 focus:border-cyan/50 focus:outline-none"
+          className="w-full resize-none rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm leading-relaxed placeholder:text-[#858585]/40 focus:border-purple-400 focus:outline-none"
         />
       ) : (
         <input
@@ -466,7 +466,7 @@ function Field({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full rounded-lg border border-line bg-navy-2 px-3 py-2 text-sm placeholder:text-muted/40 focus:border-cyan/50 focus:outline-none"
+          className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm placeholder:text-[#858585]/40 focus:border-purple-400 focus:outline-none"
         />
       )}
     </div>

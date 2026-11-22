@@ -3,11 +3,11 @@
 import type { Risk } from "@/lib/types";
 
 const COLORS: Record<Risk, string> = {
-  safe: "#35e08a",
-  low: "#35e08a",
-  medium: "#ffb020",
-  high: "#ff5a6a",
-  critical: "#ff5a6a",
+  safe: "#22c55e",
+  low: "#22c55e",
+  medium: "#f59e0b",
+  high: "#ef4444",
+  critical: "#ef4444",
 };
 
 export function RiskGauge({
@@ -31,7 +31,7 @@ export function RiskGauge({
   return (
     <div className="relative inline-flex items-center justify-center" style={{ width: size, height: size }}>
       <svg width={size} height={size} className="-rotate-90">
-        <circle cx={size / 2} cy={size / 2} r={r} stroke="#1e3350" strokeWidth={stroke} fill="none" />
+        <circle cx={size / 2} cy={size / 2} r={r} stroke="#f0efec" strokeWidth={stroke} fill="none" />
         <circle
           cx={size / 2}
           cy={size / 2}
@@ -49,7 +49,7 @@ export function RiskGauge({
         <span className="text-3xl font-bold" style={{ color }}>
           {Math.round(pct)}
         </span>
-        <span className="text-[10px] uppercase tracking-wider text-muted">{label}</span>
+        <span className="text-[10px] uppercase tracking-wider text-[#858585]">{label}</span>
       </div>
     </div>
   );

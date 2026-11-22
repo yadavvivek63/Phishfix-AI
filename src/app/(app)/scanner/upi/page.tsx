@@ -20,16 +20,16 @@ export default function UpiCheckerPage() {
         subtitle="Check a UPI ID or phone number for suspicious patterns before you pay or share information."
       />
 
-      <div className="mb-5 inline-flex rounded-xl border border-line bg-navy-2 p-1">
+      <div className="mb-5 inline-flex rounded-xl border border-black/[0.06] bg-[#f9f9f9] p-1">
         <button
           onClick={() => setMode("upi")}
-          className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${mode === "upi" ? "bg-cyan/15 text-cyan" : "text-muted hover:text-text"}`}
+          className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${mode === "upi" ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
         >
           UPI ID
         </button>
         <button
           onClick={() => setMode("phone")}
-          className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${mode === "phone" ? "bg-cyan/15 text-cyan" : "text-muted hover:text-text"}`}
+          className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${mode === "phone" ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
         >
           Phone Number
         </button>
@@ -60,14 +60,14 @@ export default function UpiCheckerPage() {
 
         <Card className="h-fit p-5">
           <h3 className="mb-3 text-sm font-semibold">How to stay safe</h3>
-          <ul className="space-y-2 text-xs text-muted">
+          <ul className="space-y-2 text-xs text-[#858585]">
             <li>• Never approve a UPI collect request to "receive" money.</li>
             <li>• Entering a UPI PIN is only ever for <em>paying</em>.</li>
             <li>• Verify the recipient&apos;s name in your UPI app before sending.</li>
             <li>• Unknown numbers asking for OTP/PIN are almost always scams.</li>
             <li>• Report confirmed fraud at cybercrime.gov.in or call 1930.</li>
           </ul>
-          <p className="mt-4 rounded-lg bg-cyan/5 p-3 text-[11px] leading-relaxed text-muted">
+          <p className="mt-4 rounded-lg bg-purple-50/50 p-3 text-[11px] leading-relaxed text-[#858585]">
             A "valid format" result does not mean an ID is safe — always verify the person independently.
           </p>
         </Card>

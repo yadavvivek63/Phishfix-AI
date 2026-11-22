@@ -326,9 +326,9 @@ export function scanPhone(input: string): ScanResult {
 }
 
 export const RISK_META: Record<Risk, { label: string; color: string; bg: string }> = {
- safe: { label: "Safe", color: "text-success", bg: "bg-success/10" },
- low: { label: "Low", color: "text-success", bg: "bg-success/10" },
- medium: { label: "Suspicious", color: "text-warn", bg: "bg-warn/10" },
- high: { label: "High Risk", color: "text-danger", bg: "bg-danger/10" },
- critical: { label: "Critical", color: "text-danger", bg: "bg-danger/15" },
+  safe: { label: "Safe", color: "text-[#22c55e]", bg: "bg-green-50" },
+  low: { label: "Low", color: "text-[#22c55e]", bg: "bg-green-50" },
+  medium: { label: "Suspicious", color: "text-[#f59e0b]", bg: "bg-amber-50" },
+  high: { label: "High Risk", color: "text-[#ef4444]", bg: "bg-red-50" },
+  critical: { label: "Critical", color: "text-[#ef4444]", bg: "bg-red-100" },
 };

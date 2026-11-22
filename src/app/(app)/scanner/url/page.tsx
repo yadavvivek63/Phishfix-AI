@@ -15,9 +15,9 @@ const EXAMPLES = [
 
 function DetailRow({ label, value }: { label: string; value: string | number }) {
   return (
-    <div className="flex items-center justify-between border-b border-line/40 py-2 last:border-0">
-      <span className="text-xs text-muted">{label}</span>
-      <span className="max-w-[60%] truncate font-mono text-xs text-text">{String(value)}</span>
+    <div className="flex items-center justify-between border-b border-black/[0.04] py-2 last:border-0">
+      <span className="text-xs text-[#858585]">{label}</span>
+      <span className="max-w-[60%] truncate font-mono text-xs text-[#111111]">{String(value)}</span>
     </div>
   );
 }
@@ -48,7 +48,7 @@ export default function UrlScannerPage() {
 
         <Card className="h-fit p-5">
           <div className="mb-3 flex items-center gap-2">
-            <Globe className="h-4 w-4 text-cyan" />
+            <Globe className="h-4 w-4 text-[#713cff]" />
             <h3 className="text-sm font-semibold">Domain Intelligence</h3>
           </div>
           {last ? (
@@ -64,16 +64,16 @@ export default function UrlScannerPage() {
               )}
             </div>
           ) : (
-            <p className="text-xs text-muted">Scan a URL to see parsed domain details here.</p>
+            <p className="text-xs text-[#858585]">Scan a URL to see parsed domain details here.</p>
           )}
 
           <div className="mt-4 space-y-2">
-            <div className="flex items-center gap-2 text-xs text-muted"><Lock className="h-3.5 w-3.5" /> Flags missing HTTPS</div>
-            <div className="flex items-center gap-2 text-xs text-muted"><Server className="h-3.5 w-3.5" /> Detects raw IP hosts</div>
-            <div className="flex items-center gap-2 text-xs text-muted"><ExternalLink className="h-3.5 w-3.5" /> Flags brand spoofing</div>
+            <div className="flex items-center gap-2 text-xs text-[#858585]"><Lock className="h-3.5 w-3.5" /> Flags missing HTTPS</div>
+            <div className="flex items-center gap-2 text-xs text-[#858585]"><Server className="h-3.5 w-3.5" /> Detects raw IP hosts</div>
+            <div className="flex items-center gap-2 text-xs text-[#858585]"><ExternalLink className="h-3.5 w-3.5" /> Flags brand spoofing</div>
           </div>
 
-          <p className="mt-4 rounded-lg bg-warn/5 p-3 text-[11px] leading-relaxed text-muted">
+          <p className="mt-4 rounded-lg bg-amber-50 p-3 text-[11px] leading-relaxed text-[#858585]">
             Phishfix never visits the target URL from the server. For isolated inspection, use the Cloud Sandbox.
           </p>
         </Card>

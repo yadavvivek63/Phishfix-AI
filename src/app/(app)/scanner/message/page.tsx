@@ -33,7 +33,7 @@ export default function MessageScannerPage() {
         </div>
         <Card className="h-fit p-5">
           <h3 className="mb-3 text-sm font-semibold">What we look for</h3>
-          <ul className="space-y-2 text-xs text-muted">
+          <ul className="space-y-2 text-xs text-[#858585]">
             {[
               "Fake KYC / account-blocking pretexts",
               "Delivery & redelivery fee scams",
@@ -44,12 +44,12 @@ export default function MessageScannerPage() {
               "Suspicious links in the message",
             ].map((t) => (
               <li key={t} className="flex items-start gap-2">
-                <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-cyan" />
+                <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-[#713cff]" />
                 {t}
               </li>
             ))}
           </ul>
-          <p className="mt-4 rounded-lg bg-cyan/5 p-3 text-[11px] leading-relaxed text-muted">
+          <p className="mt-4 rounded-lg bg-purple-50/50 p-3 text-[11px] leading-relaxed text-[#858585]">
             Analysis runs locally with transparent heuristics — no message content leaves your device.
           </p>
         </Card>

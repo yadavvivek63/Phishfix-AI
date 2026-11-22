@@ -13,7 +13,7 @@ function Toggle({ on, onClick }: { on: boolean; onClick: () => void }) {
       role="switch"
       aria-checked={on}
       onClick={onClick}
-      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan/50 ${on ? "bg-cyan" : "bg-line"}`}
+      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${on ? "bg-[#713cff]" : "bg-black/[0.08]"}`}
     >
       <span
         className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-sm transition-transform duration-200 ${on ? "translate-x-[22px]" : "translate-x-0.5"}`}
@@ -80,22 +80,22 @@ export default function ProfilePage() {
       <div className="grid gap-5 lg:grid-cols-3">
         <Card className="p-5">
           <div className="flex items-center gap-4">
-            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan/15 text-2xl font-bold text-cyan">SK</span>
+            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-50 text-2xl font-bold text-[#713cff]">SK</span>
             <div>
               <h3 className="text-lg font-semibold">Guest User</h3>
-              <p className="text-sm text-muted">guest@phishfix.ai</p>
-              <span className="mt-1 inline-block rounded-full bg-success/10 px-2 py-0.5 text-[11px] font-medium text-success">Free plan</span>
+              <p className="text-sm text-[#858585]">guest@phishfix.ai</p>
+              <span className="mt-1 inline-block rounded-full bg-green-50 px-2 py-0.5 text-[11px] font-medium text-[#22c55e]">Free plan</span>
             </div>
           </div>
           <div className="mt-4 space-y-2">
-            <label className="mb-1 block text-xs text-muted">Display name</label>
-            <input defaultValue="Guest User" className="w-full rounded-lg border border-line bg-navy-2 px-3 py-2 text-sm focus:border-cyan/50 focus:outline-none" />
-            <label className="mb-1 block text-xs text-muted">Email</label>
-            <input defaultValue="guest@phishfix.ai" className="w-full rounded-lg border border-line bg-navy-2 px-3 py-2 text-sm focus:border-cyan/50 focus:outline-none" />
+            <label className="mb-1 block text-xs text-[#858585]">Display name</label>
+            <input defaultValue="Guest User" className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-purple-400 focus:outline-none" />
+            <label className="mb-1 block text-xs text-[#858585]">Email</label>
+            <input defaultValue="guest@phishfix.ai" className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-purple-400 focus:outline-none" />
           </div>
           <button
             onClick={save}
-            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-cyan py-2.5 text-sm font-semibold text-navy"
+            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg purple-gradient py-2.5 text-sm font-semibold text-white"
           >
             {saved ? <Check className="h-4 w-4" /> : <Save className="h-4 w-4" />}
             {saved ? "Saved" : "Save changes"}
@@ -104,13 +104,13 @@ export default function ProfilePage() {
 
         <Card className="p-5">
           <SectionHeader title="Language" icon={Languages} />
-          <p className="mb-3 text-xs text-muted">The assistant can respond in 6 languages. Choose one, or let it auto-detect from your message.</p>
+          <p className="mb-3 text-xs text-[#858585]">The assistant can respond in 6 languages. Choose one, or let it auto-detect from your message.</p>
           <div className="flex flex-wrap gap-2">
             {langOptions.map((l) => (
               <button
                 key={l.code}
                 onClick={() => setPrefs({ ...prefs, lang: l.code })}
-                className={`rounded-lg border px-3 py-1.5 text-xs transition-colors ${prefs.lang === l.code ? "border-cyan/50 bg-cyan/10 text-cyan" : "border-line text-muted hover:text-text"}`}
+                className={`rounded-lg border px-3 py-1.5 text-xs transition-colors ${prefs.lang === l.code ? "border-purple-400 bg-purple-50 text-[#713cff]" : "border-black/[0.06] text-[#858585] hover:text-[#111111]"}`}
               >
                 {l.label}
               </button>
@@ -118,7 +118,7 @@ export default function ProfilePage() {
           </div>
           <button
             onClick={save}
-            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-line py-2 text-xs font-medium text-muted transition-colors hover:border-cyan/40 hover:text-cyan"
+            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-black/[0.06] py-2 text-xs font-medium text-[#858585] transition-colors hover:border-purple-200 hover:text-[#713cff]"
           >
             {saved ? <Check className="h-3.5 w-3.5" /> : <Save className="h-3.5 w-3.5" />}
             {saved ? "Saved" : "Save preferences"}
@@ -128,12 +128,12 @@ export default function ProfilePage() {
         <div className="space-y-4">
           <Card className="p-5">
             <SectionHeader title="Privacy" icon={Shield} />
-            <ul className="mb-4 space-y-2 text-xs text-muted">
-              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-cyan" /> We never store OTPs, PINs or passwords.</li>
-              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-cyan" /> Scans run locally on your device where possible.</li>
-              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-cyan" /> Heatmap data is aggregated & anonymous.</li>
+            <ul className="mb-4 space-y-2 text-xs text-[#858585]">
+              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-[#713cff]" /> We never store OTPs, PINs or passwords.</li>
+              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-[#713cff]" /> Scans run locally on your device where possible.</li>
+              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-[#713cff]" /> Heatmap data is aggregated & anonymous.</li>
             </ul>
-            <div className="space-y-3 border-t border-line/60 pt-4">
+            <div className="space-y-3 border-t border-black/[0.06] pt-4">
               {([
                 ["emailAlerts", "Email scam alerts"],
                 ["browserWarnings", "Browser protection warnings"],
@@ -141,21 +141,21 @@ export default function ProfilePage() {
                 ["shareTelemetry", "Share anonymous telemetry"],
               ] as const).map(([key, label]) => (
                 <div key={key} className="flex items-center justify-between">
-                  <span className="text-sm text-muted">{label}</span>
+                  <span className="text-sm text-[#858585]">{label}</span>
                   <Toggle on={prefs[key]} onClick={() => setPrefs({ ...prefs, [key]: !prefs[key] })} />
                 </div>
               ))}
             </div>
             <button
               onClick={save}
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-line py-2 text-xs font-medium text-muted transition-colors hover:border-cyan/40 hover:text-cyan"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-black/[0.06] py-2 text-xs font-medium text-[#858585] transition-colors hover:border-purple-200 hover:text-[#713cff]"
             >
               {saved ? <Check className="h-3.5 w-3.5" /> : <Save className="h-3.5 w-3.5" />}
               {saved ? "Saved" : "Save privacy settings"}
             </button>
           </Card>
           <Card className="p-5">
-            <button className="flex w-full items-center justify-center gap-2 rounded-lg border border-danger/40 py-2.5 text-sm font-medium text-danger transition-colors hover:bg-danger/10">
+            <button className="flex w-full items-center justify-center gap-2 rounded-lg border border-red-100 py-2.5 text-sm font-medium text-[#ef4444] transition-colors hover:bg-red-50">
               <LogOut className="h-4 w-4" /> Sign out
             </button>
           </Card>

@@ -27,26 +27,26 @@ export function EmergencyMode({ open, onClose }: { open: boolean; onClose: () =>
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-navy/80 p-4 backdrop-blur-sm animate-fade-up"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/20 p-4 backdrop-blur-sm animate-fade-up"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
     >
       <div
-        className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl border border-danger/40 bg-card p-6 shadow-2xl"
+        className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-3xl border border-red-100 bg-white p-6 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-danger/15 text-danger">
+            <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-100 text-[#ef4444]">
               <ShieldAlert className="h-5 w-5" />
             </span>
             <div>
-              <h2 className="text-lg font-bold text-danger">Digital Emergency Mode</h2>
-              <p className="text-xs text-muted">Act fast — every minute counts.</p>
+              <h2 className="text-lg font-bold text-[#ef4444]">Digital Emergency Mode</h2>
+              <p className="text-xs text-[#858585]">Act fast — every minute counts.</p>
             </div>
           </div>
-          <button onClick={onClose} className="text-muted hover:text-text transition-colors" aria-label="Close">
+          <button onClick={onClose} className="text-[#858585] hover:text-[#111111] transition-colors" aria-label="Close">
             <X className="h-5 w-5" />
           </button>
         </div>
@@ -54,7 +54,7 @@ export function EmergencyMode({ open, onClose }: { open: boolean; onClose: () =>
         <div className="mb-4 grid grid-cols-2 gap-2">
           <a
             href="tel:1930"
-            className="flex items-center justify-center gap-2 rounded-xl bg-danger py-3 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
+            className="flex items-center justify-center gap-2 rounded-xl bg-[#ef4444] py-3 text-sm font-bold text-white transition-transform hover:scale-[1.02]"
           >
             <Phone className="h-4 w-4" /> Call 1930
           </a>
@@ -62,27 +62,27 @@ export function EmergencyMode({ open, onClose }: { open: boolean; onClose: () =>
             href="https://cybercrime.gov.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-xl border border-line bg-navy-2 py-3 text-sm font-semibold text-text transition-colors hover:border-cyan/50"
+            className="flex items-center justify-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-purple-400"
           >
-            <Globe className="h-4 w-4 text-cyan" /> cybercrime.gov.in
+            <Globe className="h-4 w-4 text-[#713cff]" /> cybercrime.gov.in
           </a>
         </div>
 
         <ol className="space-y-3">
           {STEPS.map((s, i) => (
             <li key={i} className="flex gap-3">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-cyan/10 text-cyan">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-purple-50 text-[#713cff]">
                 <s.icon className="h-4 w-4" />
               </span>
               <div>
-                <p className="text-sm font-medium text-text">{i + 1}. {s.title}</p>
-                <p className="text-xs leading-relaxed text-muted">{s.desc}</p>
+                <p className="text-sm font-medium text-[#111111]">{i + 1}. {s.title}</p>
+                <p className="text-xs leading-relaxed text-[#858585]">{s.desc}</p>
               </div>
             </li>
           ))}
         </ol>
 
-        <p className="mt-4 rounded-lg bg-warn/5 p-3 text-[11px] leading-relaxed text-muted">
+        <p className="mt-4 rounded-lg bg-amber-50 p-3 text-[11px] leading-relaxed text-[#858585]">
           Phishfix AI provides guidance, not legal advice. For emergencies dial 112.
         </p>
       </div>
