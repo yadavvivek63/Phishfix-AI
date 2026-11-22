@@ -248,3 +248,4 @@ See the **Browser Protection** page (`/browser`) in the app — it provides copy
 ## License
 
 MIT. Built with open-source technologies. Free for educational and hackathon use.
+# Phishfix-AI
