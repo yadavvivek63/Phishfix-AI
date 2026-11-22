@@ -222,9 +222,9 @@ export default function HeatmapPage() {
         <ResponsiveContainer width="100%" height={260}>
           <BarChart data={barData} layout="vertical" margin={{ left: 8, right: 16 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,0,0,0.06)" horizontal={false} />
-            <XAxis type="number" stroke="#858585" fontSize={11} tickLine={false} axisLine={false} />
-            <YAxis dataKey="state" type="category" stroke="#858585" fontSize={11} tickLine={false} axisLine={false} width={110} />
-            <Tooltip contentStyle={{ background: "#101d30", border: "1px solid #1e3350", borderRadius: 8, fontSize: 12 }} cursor={{ fill: "rgba(53,213,233,0.05)" }} />
+            <XAxis type="number" stroke="#858585" fontSize={11} tickLine={false} axisLine={false} tick={{ fill: "#111111" }} />
+            <YAxis dataKey="state" type="category" stroke="#858585" fontSize={11} tickLine={false} axisLine={false} width={110} tick={{ fill: "#111111" }} />
+            <Tooltip contentStyle={{ background: "#ffffff", border: "1px solid rgba(0,0,0,0.08)", borderRadius: 8, fontSize: 12, color: "#111111" }} labelStyle={{ color: "#111111" }} itemStyle={{ color: "#111111" }} cursor={{ fill: "rgba(37,99,235,0.05)" }} />
             <Bar dataKey="reports" radius={[0, 6, 6, 0]}>
               {barData.map((_, i) => (
                 <Cell key={i} fill="#2563eb" fillOpacity={1 - i * 0.05} />
