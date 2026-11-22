@@ -37,9 +37,9 @@ export function Sidebar() {
       >
         <div className="flex h-16 items-center justify-between px-5">
           <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl blue-gradient text-white shadow-lg shadow-blue-500/30">
-              <ShieldCheck className="h-5 w-5" />
-            </span>
+<span className="flex h-9 w-9 items-center justify-center rounded-xl overflow-hidden shadow-lg shadow-blue-500/30">
+  <img src="/logo.svg" alt="Phishfix AI" className="h-9 w-9" />
+</span>
             <span className="text-sm font-bold tracking-tight text-[#111111]">
               Phish<span className="blue-text-gradient">fix</span>{" "}
               <span className="text-[#858585] font-semibold">AI</span>
