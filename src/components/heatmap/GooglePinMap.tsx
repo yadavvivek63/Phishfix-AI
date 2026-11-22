@@ -16,7 +16,7 @@ import type { CityLocation } from "@/lib/seed";
 
 const GOOGLE_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY ?? "";
 
-const RANK_COLORS = ["#ff5a6a", "#ffb020", "#35d5e9", "#35e08a", "#7ee7f2", "#a78bfa"];
+const RANK_COLORS = ["#ff5a6a", "#ffb020", "#35d5e9", "#35e08a", "#7ee7f2", "#60a5fa"];
 function rankColor(i: number) {
  return RANK_COLORS[i] ?? "#8aa0bd";
 }

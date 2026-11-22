@@ -31,7 +31,7 @@ export function LocationPopup({
     <div className="absolute bottom-3 left-3 w-[230px] rounded-xl border border-black/[0.06] bg-white/95 p-3 shadow-xl backdrop-blur">
       <div className="mb-2 flex items-start justify-between gap-2">
         <div className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-50 text-[#713cff]">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-[#2563eb]">
             <MapPin className="h-4 w-4" />
           </span>
           <div>

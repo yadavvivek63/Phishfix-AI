@@ -13,7 +13,7 @@ function Toggle({ on, onClick }: { on: boolean; onClick: () => void }) {
       role="switch"
       aria-checked={on}
       onClick={onClick}
-      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 ${on ? "bg-[#713cff]" : "bg-black/[0.08]"}`}
+      className={`relative inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 ${on ? "bg-[#2563eb]" : "bg-black/[0.08]"}`}
     >
       <span
         className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-sm transition-transform duration-200 ${on ? "translate-x-[22px]" : "translate-x-0.5"}`}
@@ -80,7 +80,7 @@ export default function ProfilePage() {
       <div className="grid gap-5 lg:grid-cols-3">
         <Card className="p-5">
           <div className="flex items-center gap-4">
-            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-50 text-2xl font-bold text-[#713cff]">SK</span>
+            <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-50 text-2xl font-bold text-[#2563eb]">SK</span>
             <div>
               <h3 className="text-lg font-semibold">Guest User</h3>
               <p className="text-sm text-[#858585]">guest@phishfix.ai</p>
@@ -89,13 +89,13 @@ export default function ProfilePage() {
           </div>
           <div className="mt-4 space-y-2">
             <label className="mb-1 block text-xs text-[#858585]">Display name</label>
-            <input defaultValue="Guest User" className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-purple-400 focus:outline-none" />
+            <input defaultValue="Guest User" className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-blue-400 focus:outline-none" />
             <label className="mb-1 block text-xs text-[#858585]">Email</label>
-            <input defaultValue="guest@phishfix.ai" className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-purple-400 focus:outline-none" />
+            <input defaultValue="guest@phishfix.ai" className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-blue-400 focus:outline-none" />
           </div>
           <button
             onClick={save}
-            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg purple-gradient py-2.5 text-sm font-semibold text-white"
+            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg blue-gradient py-2.5 text-sm font-semibold text-white"
           >
             {saved ? <Check className="h-4 w-4" /> : <Save className="h-4 w-4" />}
             {saved ? "Saved" : "Save changes"}
@@ -110,7 +110,7 @@ export default function ProfilePage() {
               <button
                 key={l.code}
                 onClick={() => setPrefs({ ...prefs, lang: l.code })}
-                className={`rounded-lg border px-3 py-1.5 text-xs transition-colors ${prefs.lang === l.code ? "border-purple-400 bg-purple-50 text-[#713cff]" : "border-black/[0.06] text-[#858585] hover:text-[#111111]"}`}
+                className={`rounded-lg border px-3 py-1.5 text-xs transition-colors ${prefs.lang === l.code ? "border-blue-400 bg-blue-50 text-[#2563eb]" : "border-black/[0.06] text-[#858585] hover:text-[#111111]"}`}
               >
                 {l.label}
               </button>
@@ -118,7 +118,7 @@ export default function ProfilePage() {
           </div>
           <button
             onClick={save}
-            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-black/[0.06] py-2 text-xs font-medium text-[#858585] transition-colors hover:border-purple-200 hover:text-[#713cff]"
+            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-black/[0.06] py-2 text-xs font-medium text-[#858585] transition-colors hover:border-blue-200 hover:text-[#2563eb]"
           >
             {saved ? <Check className="h-3.5 w-3.5" /> : <Save className="h-3.5 w-3.5" />}
             {saved ? "Saved" : "Save preferences"}
@@ -129,9 +129,9 @@ export default function ProfilePage() {
           <Card className="p-5">
             <SectionHeader title="Privacy" icon={Shield} />
             <ul className="mb-4 space-y-2 text-xs text-[#858585]">
-              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-[#713cff]" /> We never store OTPs, PINs or passwords.</li>
-              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-[#713cff]" /> Scans run locally on your device where possible.</li>
-              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-[#713cff]" /> Heatmap data is aggregated & anonymous.</li>
+              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-[#2563eb]" /> We never store OTPs, PINs or passwords.</li>
+              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-[#2563eb]" /> Scans run locally on your device where possible.</li>
+              <li className="flex items-center gap-2"><Bell className="h-3.5 w-3.5 text-[#2563eb]" /> Heatmap data is aggregated & anonymous.</li>
             </ul>
             <div className="space-y-3 border-t border-black/[0.06] pt-4">
               {([
@@ -148,7 +148,7 @@ export default function ProfilePage() {
             </div>
             <button
               onClick={save}
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-black/[0.06] py-2 text-xs font-medium text-[#858585] transition-colors hover:border-purple-200 hover:text-[#713cff]"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-black/[0.06] py-2 text-xs font-medium text-[#858585] transition-colors hover:border-blue-200 hover:text-[#2563eb]"
             >
               {saved ? <Check className="h-3.5 w-3.5" /> : <Save className="h-3.5 w-3.5" />}
               {saved ? "Saved" : "Save privacy settings"}

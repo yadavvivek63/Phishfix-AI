@@ -18,7 +18,7 @@ const INDIA_BOUNDS: [[number, number], [number, number]] = [
  [35.5, 97.5],
 ];
 
-const RANK_COLORS = ["#ff5a6a", "#ffb020", "#35d5e9", "#35e08a", "#7ee7f2", "#a78bfa"];
+const RANK_COLORS = ["#ff5a6a", "#ffb020", "#35d5e9", "#35e08a", "#7ee7f2", "#60a5fa"];
 
 function rankColor(index: number): string {
  return RANK_COLORS[index] ?? "#8aa0bd";

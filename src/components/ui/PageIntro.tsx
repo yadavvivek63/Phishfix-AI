@@ -15,7 +15,7 @@ export function PageIntro({
   return (
     <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
       <div className="flex items-start gap-3">
-        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-purple-50 text-[#713cff]">
+        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-[#2563eb]">
           <Icon className="h-5 w-5" />
         </span>
         <div>

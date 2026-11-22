@@ -91,7 +91,7 @@ export default function HeatmapPage() {
             <button
               key={p}
               onClick={() => setPeriod(p)}
-              className={`rounded-lg px-3 py-1.5 text-xs font-medium capitalize transition-colors ${period === p ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
+              className={`rounded-lg px-3 py-1.5 text-xs font-medium capitalize transition-colors ${period === p ? "bg-blue-50 text-[#2563eb]" : "text-[#858585] hover:text-[#111111]"}`}
             >
               {p === "week" ? "Weekly" : "Monthly"}
             </button>
@@ -101,7 +101,7 @@ export default function HeatmapPage() {
 
       <div className="mb-5 grid grid-cols-2 gap-4 lg:grid-cols-4">
         <StatCard label="Total reports" value={data ? Math.round(data.totals.reports * multiplier).toLocaleString() : "—"} icon={TrendingUp} accent="text-[#ef4444]" />
-        <StatCard label="States covered" value={data?.totals.states ?? "—"} icon={Map} accent="text-[#713cff]" />
+        <StatCard label="States covered" value={data?.totals.states ?? "—"} icon={Map} accent="text-[#2563eb]" />
         <StatCard label="Top category" value="Fake KYC" icon={Filter} accent="text-[#f59e0b]" />
         <StatCard label="Demo data" value="Illustrative" icon={Users} accent="text-[#858585]" />
       </div>
@@ -118,7 +118,7 @@ export default function HeatmapPage() {
                 const st = data?.points.find((p) => p.state === e.target.value) ?? null;
                 setSelected(st);
               }}
-              className="rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-1.5 text-xs text-[#111111] focus:border-purple-400 focus:outline-none"
+              className="rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-1.5 text-xs text-[#111111] focus:border-blue-400 focus:outline-none"
             >
               {(data?.points ?? []).map((p) => (
                 <option key={p.state} value={p.state}>
@@ -152,7 +152,7 @@ export default function HeatmapPage() {
             <div style={{ position: "absolute", inset: 0, pointerEvents: "none", zIndex: 700 }}>
               {categoryTotals.length > 0 && (
                 <div className="absolute right-3 top-3 max-w-[260px] rounded-xl border border-black/[0.06] bg-white/95 p-3 shadow-xl backdrop-blur" style={{ pointerEvents: "auto" }}>
-                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#713cff]">
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-[#2563eb]">
                     Reports by category{period ? ` (${period})` : ""}
                   </p>
                   <CategoryDonut data={categoryTotals} />
@@ -227,7 +227,7 @@ export default function HeatmapPage() {
             <Tooltip contentStyle={{ background: "#101d30", border: "1px solid #1e3350", borderRadius: 8, fontSize: 12 }} cursor={{ fill: "rgba(53,213,233,0.05)" }} />
             <Bar dataKey="reports" radius={[0, 6, 6, 0]}>
               {barData.map((_, i) => (
-                <Cell key={i} fill="#713cff" fillOpacity={1 - i * 0.05} />
+                <Cell key={i} fill="#2563eb" fillOpacity={1 - i * 0.05} />
               ))}
             </Bar>
           </BarChart>
@@ -236,7 +236,7 @@ export default function HeatmapPage() {
 
       <Card className="mt-5 p-5">
         <div className="mb-3 flex items-center gap-2">
-          <MapPin className="h-4 w-4 text-[#713cff]" />
+          <MapPin className="h-4 w-4 text-[#2563eb]" />
           <h3 className="text-sm font-semibold">Specific locations</h3>
           <span className="text-xs text-[#858585]">— click a city to view it on the map</span>
         </div>
@@ -251,11 +251,11 @@ export default function HeatmapPage() {
                   setSelectedCity(c);
                   setSelected(null);
                 }}
-                className={`rounded-xl border p-3 text-left transition-colors ${isActive ? "border-purple-400 bg-purple-50/50" : "border-black/[0.06] bg-[#f9f9f9]/50 hover:border-purple-200"}`}
+                className={`rounded-xl border p-3 text-left transition-colors ${isActive ? "border-blue-400 bg-blue-50/50" : "border-black/[0.06] bg-[#f9f9f9]/50 hover:border-blue-200"}`}
               >
                 <div className="flex items-center justify-between gap-2">
                   <span className="flex items-center gap-1.5 text-sm font-medium">
-                    <MapPin className="h-3.5 w-3.5 text-[#713cff]" /> {c.city}
+                    <MapPin className="h-3.5 w-3.5 text-[#2563eb]" /> {c.city}
                   </span>
                   <span className="text-xs text-[#858585]">{c.reports.toLocaleString()}</span>
                 </div>
@@ -265,8 +265,8 @@ export default function HeatmapPage() {
           })}
         </div>
         {selectedCity && (
-          <p className="mt-3 rounded-lg bg-purple-50/50 p-3 text-xs text-[#858585]">
-            <span className="font-semibold text-[#713cff]">{selectedCity.city}</span> — {selectedCity.reports.toLocaleString()} reports · KYC {selectedCity.scams.kyc} · Delivery {selectedCity.scams.delivery} · UPI {selectedCity.scams.upi} · Phishing {selectedCity.scams.phishing} · QR {selectedCity.scams.qr}
+          <p className="mt-3 rounded-lg bg-blue-50/50 p-3 text-xs text-[#858585]">
+            <span className="font-semibold text-[#2563eb]">{selectedCity.city}</span> — {selectedCity.reports.toLocaleString()} reports · KYC {selectedCity.scams.kyc} · Delivery {selectedCity.scams.delivery} · UPI {selectedCity.scams.upi} · Phishing {selectedCity.scams.phishing} · QR {selectedCity.scams.qr}
           </p>
         )}
       </Card>

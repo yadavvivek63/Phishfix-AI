@@ -23,13 +23,13 @@ export default function UpiCheckerPage() {
       <div className="mb-5 inline-flex rounded-xl border border-black/[0.06] bg-[#f9f9f9] p-1">
         <button
           onClick={() => setMode("upi")}
-          className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${mode === "upi" ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
+          className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${mode === "upi" ? "bg-blue-50 text-[#2563eb]" : "text-[#858585] hover:text-[#111111]"}`}
         >
           UPI ID
         </button>
         <button
           onClick={() => setMode("phone")}
-          className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${mode === "phone" ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
+          className={`rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${mode === "phone" ? "bg-blue-50 text-[#2563eb]" : "text-[#858585] hover:text-[#111111]"}`}
         >
           Phone Number
         </button>
@@ -67,7 +67,7 @@ export default function UpiCheckerPage() {
             <li>• Unknown numbers asking for OTP/PIN are almost always scams.</li>
             <li>• Report confirmed fraud at cybercrime.gov.in or call 1930.</li>
           </ul>
-          <p className="mt-4 rounded-lg bg-purple-50/50 p-3 text-[11px] leading-relaxed text-[#858585]">
+          <p className="mt-4 rounded-lg bg-blue-50/50 p-3 text-[11px] leading-relaxed text-[#858585]">
             A "valid format" result does not mean an ID is safe — always verify the person independently.
           </p>
         </Card>

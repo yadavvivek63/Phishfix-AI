@@ -22,7 +22,7 @@ export function CategoryDonut({ data }: { data: CategoryDatum[] }) {
  return {
  ...d,
  pct: Math.round(frac * 100),
- color: CATEGORY_COLORS[d.key] || "#a78bfa",
+ color: CATEGORY_COLORS[d.key] || "#60a5fa",
  dash: `${len} ${c - len}`,
  offset: -(before / total) * c,
  };

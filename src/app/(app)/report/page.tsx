@@ -11,7 +11,7 @@ const CATEGORIES = ["Fake KYC", "Delivery scam", "UPI fraud", "Refund bait", "Wh
 const STATES = ["Maharashtra", "Delhi", "Karnataka", "Tamil Nadu", "Telangana", "Gujarat", "Uttar Pradesh", "West Bengal", "Rajasthan", "Kerala", "Other"];
 
 const STATUS_STYLE: Record<string, string> = {
-  open: "bg-purple-50 text-[#713cff]",
+  open: "bg-blue-50 text-[#2563eb]",
   reviewing: "bg-amber-50 text-[#f59e0b]",
   confirmed: "bg-red-50 text-[#ef4444]",
   dismissed: "bg-black/[0.03] text-[#858585]",
@@ -73,7 +73,7 @@ export default function ReportPage() {
               <select
                 value={form.category}
                 onChange={(e) => setForm({ ...form, category: e.target.value })}
-                className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm text-[#111111] focus:border-purple-400 focus:outline-none"
+                className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm text-[#111111] focus:border-blue-400 focus:outline-none"
               >
                 {CATEGORIES.map((c) => <option key={c}>{c}</option>)}
               </select>
@@ -84,7 +84,7 @@ export default function ReportPage() {
                 value={form.target}
                 onChange={(e) => setForm({ ...form, target: e.target.value })}
                 placeholder="e.g. sbi-kyc.xyz or name@ybl"
-                className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm text-[#111111] placeholder:text-[#858585]/50 focus:border-purple-400 focus:outline-none"
+                className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm text-[#111111] placeholder:text-[#858585]/50 focus:border-blue-400 focus:outline-none"
               />
             </div>
             <div>
@@ -92,7 +92,7 @@ export default function ReportPage() {
               <select
                 value={form.state}
                 onChange={(e) => setForm({ ...form, state: e.target.value })}
-                className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm text-[#111111] focus:border-purple-400 focus:outline-none"
+                className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm text-[#111111] focus:border-blue-400 focus:outline-none"
               >
                 {STATES.map((s) => <option key={s}>{s}</option>)}
               </select>
@@ -105,7 +105,7 @@ export default function ReportPage() {
                 rows={3}
                 maxLength={2000}
                 placeholder="What happened? Include the message or context."
-                className="w-full resize-none rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm text-[#111111] placeholder:text-[#858585]/50 focus:border-purple-400 focus:outline-none"
+                className="w-full resize-none rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm text-[#111111] placeholder:text-[#858585]/50 focus:border-blue-400 focus:outline-none"
               />
             </div>
             {err && <p className="text-xs text-[#ef4444]">{err}</p>}
@@ -113,7 +113,7 @@ export default function ReportPage() {
             <button
               type="submit"
               disabled={busy}
-              className="w-full rounded-lg purple-gradient py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.01] disabled:opacity-50"
+              className="w-full rounded-lg blue-gradient py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.01] disabled:opacity-50"
             >
               {busy ? "Submitting…" : "Submit report"}
             </button>
@@ -127,7 +127,7 @@ export default function ReportPage() {
               <button
                 key={s}
                 onClick={() => setFilter(s)}
-                className={`rounded-lg px-3 py-1 text-xs font-medium capitalize transition-colors ${filter === s ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
+                className={`rounded-lg px-3 py-1 text-xs font-medium capitalize transition-colors ${filter === s ? "bg-blue-50 text-[#2563eb]" : "text-[#858585] hover:text-[#111111]"}`}
               >
                 {s === "all" ? "All" : s}
               </button>
@@ -142,7 +142,7 @@ export default function ReportPage() {
                 <div className="flex items-start justify-between gap-3">
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="rounded-md bg-purple-50 px-2 py-0.5 text-[11px] font-medium text-[#713cff]">{r.category}</span>
+                      <span className="rounded-md bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-[#2563eb]">{r.category}</span>
                       <span className={`rounded-md px-2 py-0.5 text-[11px] font-medium capitalize ${STATUS_STYLE[r.status]}`}>{r.status}</span>
                       <span className="text-[11px] text-[#858585]">{r.state}</span>
                     </div>

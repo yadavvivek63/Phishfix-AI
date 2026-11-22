@@ -101,7 +101,7 @@ export default function DashboardPage() {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Security Overview</h1>
-          <p className="mt-1 text-sm text-[#858585]">Your protection at a glance · {new Date().toLocaleDateString()}</p>
+          <p className="mt-1 text-sm text-[#858585]">Your protection at a glance · {new Date().toISOString().slice(0, 10)}</p>
         </div>
         <div className="flex items-center gap-2 rounded-lg border border-success/30 bg-green-50 px-3 py-1.5 text-xs font-medium text-[#22c55e]">
           <span className="h-1.5 w-1.5 rounded-full bg-[#22c55e]" /> Protection active
@@ -111,7 +111,7 @@ export default function DashboardPage() {
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         <StatCard label="Scams reported" value={stats ? stats.totalReports.toLocaleString() : "—"} icon={ShieldAlert} accent="text-[#ef4444]" trend={{ value: "12% this week", up: true }} />
         <StatCard label="Active threats" value={stats?.activeThreats ?? "—"} icon={Network} accent="text-[#f59e0b]" />
-        <StatCard label="Confirmed threats" value={stats?.confirmedThreats ?? "—"} icon={ShieldCheck} accent="text-[#713cff]" />
+        <StatCard label="Confirmed threats" value={stats?.confirmedThreats ?? "—"} icon={ShieldCheck} accent="text-[#2563eb]" />
         <StatCard label="Protected users" value={stats ? stats.protectedUsers.toLocaleString() : "—"} icon={Activity} accent="text-[#22c55e]" trend={{ value: "8% this month", up: true }} />
       </div>
 
@@ -124,12 +124,12 @@ export default function DashboardPage() {
               onChange={(e) => setQuickMsg(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && quickScan()}
               placeholder="e.g. Your SBI KYC is pending, verify here: http://sbi-kyc.xyz/verify"
-              className="flex-1 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-4 py-2.5 text-sm text-[#111111] placeholder:text-[#858585]/60 focus:border-purple-400 focus:outline-none"
+              className="flex-1 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-4 py-2.5 text-sm text-[#111111] placeholder:text-[#858585]/60 focus:border-blue-400 focus:outline-none"
             />
             <button
               onClick={quickScan}
               disabled={busy}
-              className="rounded-xl purple-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-50"
+              className="rounded-xl blue-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-50"
             >
               {busy ? "Scanning…" : "Scan"}
             </button>
@@ -155,7 +155,7 @@ export default function DashboardPage() {
               <XAxis dataKey="day" stroke="#858585" fontSize={11} tickLine={false} axisLine={false} />
               <YAxis stroke="#858585" fontSize={11} tickLine={false} axisLine={false} width={32} />
               <Tooltip contentStyle={{ background: "#101d30", border: "1px solid #1e3350", borderRadius: 8, fontSize: 12 }} />
-              <Bar dataKey="scans" fill="#713cff" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="scans" fill="#2563eb" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </Card>
@@ -191,13 +191,13 @@ export default function DashboardPage() {
               <button
                 key={q.href}
                 onClick={() => router.push(q.href)}
-                className="group flex items-center gap-3 rounded-xl border border-black/[0.06] bg-[#f9f9f9]/50 p-3 text-left transition-colors hover:border-purple-200"
+                className="group flex items-center gap-3 rounded-xl border border-black/[0.06] bg-[#f9f9f9]/50 p-3 text-left transition-colors hover:border-blue-200"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-purple-50 text-[#713cff]">
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-[#2563eb]">
                   <q.icon className="h-4 w-4" />
                 </span>
                 <span className="text-sm font-medium">{q.label}</span>
-                <ArrowUpRight className="ml-auto h-4 w-4 text-[#858585] group-hover:text-[#713cff]" />
+                <ArrowUpRight className="ml-auto h-4 w-4 text-[#858585] group-hover:text-[#2563eb]" />
               </button>
             ))}
           </div>

@@ -81,7 +81,7 @@ export function ScanForm({
               placeholder={placeholder}
               rows={rows}
               maxLength={maxLength}
-              className="w-full resize-none rounded-xl border border-black/[0.06] bg-[#f9f9f9] p-4 text-sm leading-relaxed text-[#111111] placeholder:text-[#858585]/50 focus:border-purple-400 focus:outline-none"
+              className="w-full resize-none rounded-xl border border-black/[0.06] bg-[#f9f9f9] p-4 text-sm leading-relaxed text-[#111111] placeholder:text-[#858585]/50 focus:border-blue-400 focus:outline-none"
             />
           ) : (
             <input
@@ -90,7 +90,7 @@ export function ScanForm({
               onKeyDown={(e) => e.key === "Enter" && run()}
               placeholder={placeholder}
               maxLength={maxLength}
-              className="w-full rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-4 py-3 text-sm text-[#111111] placeholder:text-[#858585]/50 focus:border-purple-400 focus:outline-none"
+              className="w-full rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-4 py-3 text-sm text-[#111111] placeholder:text-[#858585]/50 focus:border-blue-400 focus:outline-none"
             />
           )}
           {err && <p className="mt-2 text-xs text-[#ef4444]">{err}</p>}
@@ -98,7 +98,7 @@ export function ScanForm({
             <button
               onClick={run}
               disabled={busy}
-              className="inline-flex items-center gap-2 rounded-xl purple-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-50"
+              className="inline-flex items-center gap-2 rounded-xl blue-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-50"
             >
               {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <ScanLine className="h-4 w-4" />}
               {busy ? "Analyzing…" : buttonLabel}
@@ -126,7 +126,7 @@ export function ScanForm({
                       setErr("");
                       setResult(null);
                     }}
-                    className="rounded-lg border border-black/[0.06] px-2.5 py-1 text-[11px] text-[#858585] transition-colors hover:border-purple-200 hover:text-[#713cff]"
+                    className="rounded-lg border border-black/[0.06] px-2.5 py-1 text-[11px] text-[#858585] transition-colors hover:border-blue-200 hover:text-[#2563eb]"
                   >
                     Example {i + 1}
                   </button>

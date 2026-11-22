@@ -62,16 +62,16 @@ export function EmergencyMode({ open, onClose }: { open: boolean; onClose: () =>
             href="https://cybercrime.gov.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-purple-400"
+            className="flex items-center justify-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-blue-400"
           >
-            <Globe className="h-4 w-4 text-[#713cff]" /> cybercrime.gov.in
+            <Globe className="h-4 w-4 text-[#2563eb]" /> cybercrime.gov.in
           </a>
         </div>
 
         <ol className="space-y-3">
           {STEPS.map((s, i) => (
             <li key={i} className="flex gap-3">
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-purple-50 text-[#713cff]">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#2563eb]">
                 <s.icon className="h-4 w-4" />
               </span>
               <div>

@@ -97,7 +97,7 @@ export default function AssistantPage() {
       >
         <div className="flex flex-wrap items-center gap-2">
           <div className="inline-flex items-center gap-1.5 rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-2 py-1">
-            <Languages className="h-3.5 w-3.5 text-[#713cff]" />
+            <Languages className="h-3.5 w-3.5 text-[#2563eb]" />
             <select
               value={lang}
               onChange={(e) => setLang(e.target.value as LangChoice)}
@@ -113,7 +113,7 @@ export default function AssistantPage() {
             </select>
           </div>
           <span className="inline-flex items-center gap-1.5 rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-1.5 text-xs text-[#858585]">
-            <ShieldAlert className="h-3.5 w-3.5 text-[#713cff]" /> Emergency ready
+            <ShieldAlert className="h-3.5 w-3.5 text-[#2563eb]" /> Emergency ready
           </span>
         </div>
       </PageIntro>
@@ -123,19 +123,19 @@ export default function AssistantPage() {
           <div className="scrollbar-none flex-1 space-y-4 overflow-y-auto p-5">
             {history.map((m, i) => (
               <div key={i} className={`flex gap-3 ${m.role === "user" ? "flex-row-reverse" : ""}`}>
-                <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${m.role === "user" ? "bg-purple-50 text-[#713cff]" : "bg-white-2 text-[#713cff]"}`}>
+                <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${m.role === "user" ? "bg-blue-50 text-[#2563eb]" : "bg-white-2 text-[#2563eb]"}`}>
                   {m.role === "user" ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
                 </span>
                 <div
                   className={`max-w-[80%] whitespace-pre-wrap rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                     m.role === "user"
-                      ? "purple-gradient text-white"
+                      ? "blue-gradient text-white"
                       : "border border-black/[0.06] bg-[#f9f9f9] text-[#111111]/90"
                   }`}
                 >
                   {m.content}
                   {m.role === "assistant" && m.demo && (
-                    <span className="ml-2 inline-flex items-center gap-1 rounded bg-purple-50 px-1.5 py-0.5 text-[9px] text-[#713cff]">
+                    <span className="ml-2 inline-flex items-center gap-1 rounded bg-blue-50 px-1.5 py-0.5 text-[9px] text-[#2563eb]">
                       <Sparkles className="h-2.5 w-2.5" /> built-in · free
                     </span>
                   )}
@@ -144,10 +144,10 @@ export default function AssistantPage() {
             ))}
             {busy && (
               <div className="flex gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white-2 text-[#713cff]"><Bot className="h-4 w-4" /></span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white-2 text-[#2563eb]"><Bot className="h-4 w-4" /></span>
                 <div className="flex items-center gap-1 rounded-2xl border border-black/[0.06] bg-[#f9f9f9] px-4 py-3">
                   {[0, 1, 2].map((d) => (
-                    <span key={d} className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#713cff]" style={{ animationDelay: `${d * 0.15}s` }} />
+                    <span key={d} className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#2563eb]" style={{ animationDelay: `${d * 0.15}s` }} />
                   ))}
                 </div>
               </div>
@@ -162,12 +162,12 @@ export default function AssistantPage() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && send()}
                 placeholder="Describe the scam or paste the message…"
-                className="flex-1 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-4 py-2.5 text-sm text-[#111111] placeholder:text-[#858585]/60 focus:border-purple-400 focus:outline-none"
+                className="flex-1 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-4 py-2.5 text-sm text-[#111111] placeholder:text-[#858585]/60 focus:border-blue-400 focus:outline-none"
               />
               <button
                 onClick={() => send()}
                 disabled={busy || !input.trim()}
-                className="flex h-10 w-10 items-center justify-center rounded-xl purple-gradient text-white transition-transform hover:scale-105 disabled:opacity-40"
+                className="flex h-10 w-10 items-center justify-center rounded-xl blue-gradient text-white transition-transform hover:scale-105 disabled:opacity-40"
                 aria-label="Send"
               >
                 <Send className="h-4 w-4" />
@@ -184,7 +184,7 @@ export default function AssistantPage() {
                 <button
                   key={s}
                   onClick={() => send(s)}
-                  className="w-full rounded-lg border border-black/[0.06] px-3 py-2 text-left text-xs text-[#858585] transition-colors hover:border-purple-200 hover:text-[#111111]"
+                  className="w-full rounded-lg border border-black/[0.06] px-3 py-2 text-left text-xs text-[#858585] transition-colors hover:border-blue-200 hover:text-[#111111]"
                 >
                   {s}
                 </button>

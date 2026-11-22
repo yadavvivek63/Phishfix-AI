@@ -17,9 +17,9 @@ export function StatusScreen({
   children?: ReactNode;
 }) {
   const toneClass =
-    tone === "danger" ? "text-[#ef4444]" : tone === "warn" ? "text-[#f59e0b]" : "text-[#713cff]";
+    tone === "danger" ? "text-[#ef4444]" : tone === "warn" ? "text-[#f59e0b]" : "text-[#2563eb]";
   const bgClass =
-    tone === "danger" ? "bg-red-50" : tone === "warn" ? "bg-amber-50" : "bg-purple-50";
+    tone === "danger" ? "bg-red-50" : tone === "warn" ? "bg-amber-50" : "bg-blue-50";
 
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center px-4 text-center">

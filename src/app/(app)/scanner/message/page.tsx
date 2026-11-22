@@ -44,12 +44,12 @@ export default function MessageScannerPage() {
               "Suspicious links in the message",
             ].map((t) => (
               <li key={t} className="flex items-start gap-2">
-                <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-[#713cff]" />
+                <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-[#2563eb]" />
                 {t}
               </li>
             ))}
           </ul>
-          <p className="mt-4 rounded-lg bg-purple-50/50 p-3 text-[11px] leading-relaxed text-[#858585]">
+          <p className="mt-4 rounded-lg bg-blue-50/50 p-3 text-[11px] leading-relaxed text-[#858585]">
             Analysis runs locally with transparent heuristics — no message content leaves your device.
           </p>
         </Card>

@@ -43,14 +43,14 @@ export default function LandingPage() {
  <div className="space-y-16">
  {/* Hero */}
  <section className="relative overflow-hidden rounded-3xl border border-black/[0.06] grid-bg px-6 py-16 sm:px-10 lg:py-20">
- <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-purple-300/30 blur-3xl" />
- <div className="pointer-events-none absolute -bottom-24 -left-10 h-72 w-72 rounded-full bg-purple-50 blur-3xl" />
+ <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-blue-300/30 blur-3xl" />
+ <div className="pointer-events-none absolute -bottom-24 -left-10 h-72 w-72 rounded-full bg-blue-50 blur-3xl" />
  <div className="relative mx-auto max-w-3xl text-center">
- <span className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50/50 px-4 py-1.5 text-xs font-medium text-[#713cff]">
+ <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/50 px-4 py-1.5 text-xs font-medium text-[#2563eb]">
  <ShieldCheck className="h-4 w-4" /> AI-Powered Scam Protection for India
  </span>
  <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight sm:text-6xl">
- Detect. Investigate. <span className="text-[#713cff] text-glow">Protect.</span>
+ Detect. Investigate. <span className="text-[#2563eb] text-glow">Protect.</span>
  </h1>
  <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#858585] sm:text-lg">
  Phishfix AI is an all-in-one cybersecurity platform to protect Indian users from fake KYC,
@@ -59,15 +59,15 @@ export default function LandingPage() {
  <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
  <Link
  href="/scanner/message"
- className="inline-flex items-center justify-center gap-2 rounded-xl purple-gradient px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
+ className="inline-flex items-center justify-center gap-2 rounded-xl blue-gradient px-6 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
  >
  <ScanLine className="h-4 w-4" /> Scan a message now
  </Link>
  <Link
  href="/assistant"
- className="inline-flex items-center justify-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-purple-400"
+ className="inline-flex items-center justify-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-6 py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-blue-400"
  >
- <Bot className="h-4 w-4 text-[#713cff]" /> Ask the AI assistant
+ <Bot className="h-4 w-4 text-[#2563eb]" /> Ask the AI assistant
  </Link>
  </div>
  <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-[#858585]">
@@ -87,7 +87,7 @@ export default function LandingPage() {
  { label: "Phishing sites", value: "700+", icon: QrCode },
  ].map((s) => (
  <Card key={s.label} className="p-4">
- <s.icon className="mb-2 h-5 w-5 text-[#713cff]" />
+ <s.icon className="mb-2 h-5 w-5 text-[#2563eb]" />
  <p className="text-xl font-bold">{s.value}</p>
  <p className="text-xs text-[#858585]">{s.label} reports (demo)</p>
  </Card>
@@ -103,13 +103,13 @@ export default function LandingPage() {
  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
  {FEATURES.map((f) => (
  <Link key={f.href} href={f.href}>
- <Card className="group h-full p-5 transition-all hover:border-purple-200 hover:bg-white-2">
- <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-50 text-[#713cff] transition-transform group-hover:scale-110">
+ <Card className="group h-full p-5 transition-all hover:border-blue-200 hover:bg-white-2">
+ <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-[#2563eb] transition-transform group-hover:scale-110">
  <f.icon className="h-5 w-5" />
  </span>
  <h3 className="mt-4 text-sm font-semibold">{f.title}</h3>
  <p className="mt-1.5 text-xs leading-relaxed text-[#858585]">{f.desc}</p>
- <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-[#713cff]">
+ <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-[#2563eb]">
  Open <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
  </span>
  </Card>
@@ -127,7 +127,7 @@ export default function LandingPage() {
  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
  {UNIQUE.map((u) => (
  <div key={u.title} className="flex items-start gap-3">
- <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-purple-50 text-[#713cff]">
+ <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-[#2563eb]">
  <u.icon className="h-5 w-5" />
  </span>
  <div>

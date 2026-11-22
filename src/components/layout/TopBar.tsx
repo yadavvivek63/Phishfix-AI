@@ -19,7 +19,7 @@ interface Notif {
 const TYPE_META = {
   critical: { icon: AlertTriangle, color: "text-[#ef4444]", bg: "bg-red-50" },
   warning: { icon: ShieldAlert, color: "text-[#f59e0b]", bg: "bg-amber-50" },
-  info: { icon: Info, color: "text-[#713cff]", bg: "bg-purple-50" },
+  info: { icon: Info, color: "text-[#2563eb]", bg: "bg-blue-50" },
   success: { icon: CheckCircle2, color: "text-[#22c55e]", bg: "bg-green-50" },
 };
 
@@ -75,7 +75,7 @@ export function TopBar() {
       <div className="flex items-center gap-2">
         <Link
           href="/emergency"
-          className="inline-flex items-center gap-1.5 rounded-full border border-black/[0.06] bg-white px-3 py-1.5 text-xs font-medium text-[#858585] shadow-sm transition-all hover:text-[#713cff] hover:shadow-md"
+          className="inline-flex items-center gap-1.5 rounded-full border border-black/[0.06] bg-white px-3 py-1.5 text-xs font-medium text-[#858585] shadow-sm transition-all hover:text-[#2563eb] hover:shadow-md"
         >
           <FileText className="h-3.5 w-3.5" />
           <span className="hidden sm:inline">File report</span>
@@ -90,19 +90,19 @@ export function TopBar() {
         </a>
         <Link
           href="/scanner/message"
-          className="hidden items-center gap-2 rounded-full border border-black/[0.06] bg-white px-3 py-1.5 text-sm text-[#858585] shadow-sm transition-all hover:text-[#713cff] hover:shadow-md sm:flex"
+          className="hidden items-center gap-2 rounded-full border border-black/[0.06] bg-white px-3 py-1.5 text-sm text-[#858585] shadow-sm transition-all hover:text-[#2563eb] hover:shadow-md sm:flex"
         >
           <Search className="h-4 w-4" /> Quick scan
         </Link>
         <div className="relative" ref={notifRef}>
           <button
             onClick={() => setNotifOpen((o) => !o)}
-            className="relative flex h-9 w-9 items-center justify-center rounded-full border border-black/[0.06] bg-white text-[#858585] shadow-sm transition-all hover:text-[#713cff] hover:shadow-md"
+            className="relative flex h-9 w-9 items-center justify-center rounded-full border border-black/[0.06] bg-white text-[#858585] shadow-sm transition-all hover:text-[#2563eb] hover:shadow-md"
             aria-label="Notifications"
           >
             <Bell className="h-4 w-4" />
             {unread > 0 && (
-              <span className="absolute right-1.5 top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#713cff] px-1 text-[9px] font-bold text-white">
+              <span className="absolute right-1.5 top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-[#2563eb] px-1 text-[9px] font-bold text-white">
                 {unread}
               </span>
             )}
@@ -116,7 +116,7 @@ export function TopBar() {
                   {unread > 0 && (
                     <button
                       onClick={markAllRead}
-                      className="text-[11px] font-medium text-[#713cff] hover:underline"
+                      className="text-[11px] font-medium text-[#2563eb] hover:underline"
                     >
                       Mark all read
                     </button>
@@ -140,7 +140,7 @@ export function TopBar() {
                     <button
                       key={n.id}
                       onClick={() => toggleNotif(n.id)}
-                      className={`flex w-full gap-3 border-b border-black/[0.04] px-4 py-3 text-left transition-colors hover:bg-purple-50/40 ${!n.read ? "bg-purple-50/30" : ""}`}
+                      className={`flex w-full gap-3 border-b border-black/[0.04] px-4 py-3 text-left transition-colors hover:bg-blue-50/40 ${!n.read ? "bg-blue-50/30" : ""}`}
                     >
                       <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${meta.bg} ${meta.color}`}>
                         <meta.icon className="h-4 w-4" />
@@ -150,7 +150,7 @@ export function TopBar() {
                         <p className="mt-0.5 text-[11px] leading-snug text-[#858585]">{n.message}</p>
                         <p className="mt-1 text-[10px] text-[#858585]/60">{n.time}</p>
                       </div>
-                      {!n.read && <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#713cff]" />}
+                      {!n.read && <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#2563eb]" />}
                     </button>
                   );
                 })}
@@ -159,7 +159,7 @@ export function TopBar() {
           )}
         </div>
         <div className="flex items-center gap-2 rounded-full border border-black/[0.06] bg-white py-1 pl-1 pr-3 shadow-sm">
-          <span className="flex h-7 w-7 items-center justify-center rounded-full purple-gradient text-xs font-bold text-white">
+          <span className="flex h-7 w-7 items-center justify-center rounded-full blue-gradient text-xs font-bold text-white">
             SK
           </span>
           <span className="hidden text-sm font-medium text-[#111111] sm:inline">Guest</span>

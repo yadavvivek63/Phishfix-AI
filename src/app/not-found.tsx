@@ -15,15 +15,15 @@ export default function RootNotFound() {
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 rounded-xl purple-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
+          className="inline-flex items-center gap-2 rounded-xl blue-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02]"
         >
           <Home className="h-4 w-4" /> Go to home
         </Link>
         <Link
           href="/dashboard"
-          className="inline-flex items-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-5 py-2.5 text-sm font-semibold text-[#111111] transition-colors hover:border-purple-400"
+          className="inline-flex items-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-5 py-2.5 text-sm font-semibold text-[#111111] transition-colors hover:border-blue-400"
         >
-          <ArrowLeft className="h-4 w-4 text-[#713cff]" /> Dashboard
+          <ArrowLeft className="h-4 w-4 text-[#2563eb]" /> Dashboard
         </Link>
       </div>
     </div>

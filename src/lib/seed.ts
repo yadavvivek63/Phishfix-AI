@@ -46,12 +46,12 @@ export const COMMUNITY_REPORTS: CommunityReport[] = [
 ];
 
 export const CATEGORY_COLORS: Record<string, string> = {
-  kyc: "#713cff",
-  delivery: "#a78bfa",
+  kyc: "#2563eb",
+  delivery: "#60a5fa",
   upi: "#8b5cf6",
   phishing: "#6d28d9",
   qr: "#c4b5fd",
-  other: "#a78bfa",
+  other: "#60a5fa",
 };
 
 export function totalReports(): number {

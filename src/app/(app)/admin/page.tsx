@@ -15,7 +15,7 @@ interface Stats {
 }
 
 const STATUS_STYLE: Record<string, string> = {
-  open: "bg-purple-50 text-[#713cff]",
+  open: "bg-blue-50 text-[#2563eb]",
   reviewing: "bg-amber-50 text-[#f59e0b]",
   confirmed: "bg-red-50 text-[#ef4444]",
   dismissed: "bg-black/[0.03] text-[#858585]",
@@ -51,7 +51,7 @@ export default function AdminPage() {
         <StatCard label="Total reports" value={stats?.totalReports.toLocaleString() ?? "—"} icon={AlertTriangle} accent="text-[#ef4444]" />
         <StatCard label="Active threats" value={stats?.activeThreats ?? "—"} icon={ShieldHalf} accent="text-[#f59e0b]" />
         <StatCard label="Confirmed" value={stats?.confirmedThreats ?? "—"} icon={CheckCircle2} accent="text-[#22c55e]" />
-        <StatCard label="Protected users" value={stats?.protectedUsers.toLocaleString() ?? "—"} icon={Users} accent="text-[#713cff]" />
+        <StatCard label="Protected users" value={stats?.protectedUsers.toLocaleString() ?? "—"} icon={Users} accent="text-[#2563eb]" />
       </div>
 
       <div className="mt-5 grid gap-5 lg:grid-cols-3">
@@ -63,7 +63,7 @@ export default function AdminPage() {
               return (
                 <div key={s.name} className="flex items-center justify-between rounded-lg border border-black/[0.06] bg-[#f9f9f9]/50 px-3 py-2">
                   <span className="flex items-center gap-2 text-sm">
-                    <s.icon className="h-4 w-4 text-[#713cff]" /> {s.name}
+                    <s.icon className="h-4 w-4 text-[#2563eb]" /> {s.name}
                   </span>
                   <span className={`flex items-center gap-1.5 text-xs ${ok ? "text-[#22c55e]" : "text-[#858585]"}`}>
                     <span className={`h-1.5 w-1.5 rounded-full ${ok ? "bg-[#22c55e]" : "bg-[#858585]"}`} />
@@ -118,7 +118,7 @@ export default function AdminPage() {
             <tbody>
               {reports.map((r) => (
                 <tr key={r.id} className="border-b border-black/[0.04] last:border-0">
-                  <td className="max-w-[220px] truncate py-2 pr-4 font-mono text-xs text-[#a78bfa]">{r.target}</td>
+                  <td className="max-w-[220px] truncate py-2 pr-4 font-mono text-xs text-[#60a5fa]">{r.target}</td>
                   <td className="py-2 pr-4 text-xs text-[#858585]">{r.category}</td>
                   <td className="py-2 pr-4 text-xs text-[#858585]">{r.state}</td>
                   <td className="py-2 pr-4">

@@ -15,7 +15,7 @@ export function ScanResultView({ result }: { result: ScanResult }) {
         <div className="flex-1">
           <div className="mb-2 flex flex-wrap items-center gap-2">
             <RiskBadge risk={result.verdict} />
-            <span className="rounded-full bg-purple-50 px-2 py-0.5 text-[11px] font-medium text-[#713cff]">
+            <span className="rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-medium text-[#2563eb]">
               {result.confidence}% confidence
             </span>
             {result.demo && (
@@ -30,7 +30,7 @@ export function ScanResultView({ result }: { result: ScanResult }) {
 
       <div className="space-y-2">
         <h4 className="flex items-center gap-2 text-sm font-semibold text-[#111111]">
-          <Info className="h-4 w-4 text-[#713cff]" /> Analysis Signals
+          <Info className="h-4 w-4 text-[#2563eb]" /> Analysis Signals
         </h4>
         {result.signals.map((s) => {
           const m = RISK_META[s.severity];
@@ -52,7 +52,7 @@ export function ScanResultView({ result }: { result: ScanResult }) {
 
       <div className="rounded-xl border border-black/[0.06] bg-[#f9f9f9]/40 p-3">
         <p className="text-[11px] leading-relaxed text-[#858585]">
-          <span className="font-semibold text-[#a78bfa]">Disclaimer:</span> {meta.label} verdicts are generated
+          <span className="font-semibold text-[#60a5fa]">Disclaimer:</span> {meta.label} verdicts are generated
           by local heuristic analysis, not a verified threat database. Always confirm sensitive requests
           (money, OTP, identity) through an official channel.
         </p>

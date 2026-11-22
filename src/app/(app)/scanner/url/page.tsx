@@ -48,7 +48,7 @@ export default function UrlScannerPage() {
 
         <Card className="h-fit p-5">
           <div className="mb-3 flex items-center gap-2">
-            <Globe className="h-4 w-4 text-[#713cff]" />
+            <Globe className="h-4 w-4 text-[#2563eb]" />
             <h3 className="text-sm font-semibold">Domain Intelligence</h3>
           </div>
           {last ? (

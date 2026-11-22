@@ -159,13 +159,13 @@ export default function EmergencyReportPage() {
             <div className="flex gap-3">
               <button
                 onClick={copyReport}
-                className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-black/[0.06] py-2.5 text-xs font-medium text-[#858585] transition-colors hover:border-purple-200 hover:text-[#713cff]"
+                className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-black/[0.06] py-2.5 text-xs font-medium text-[#858585] transition-colors hover:border-blue-200 hover:text-[#2563eb]"
               >
                 <Copy className="h-3.5 w-3.5" /> {copied ? "Copied!" : "Copy report text"}
               </button>
               <button
                 onClick={downloadReport}
-                className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-black/[0.06] py-2.5 text-xs font-medium text-[#858585] transition-colors hover:border-purple-200 hover:text-[#713cff]"
+                className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-black/[0.06] py-2.5 text-xs font-medium text-[#858585] transition-colors hover:border-blue-200 hover:text-[#2563eb]"
               >
                 <Download className="h-3.5 w-3.5" /> Download report
               </button>
@@ -181,7 +181,7 @@ export default function EmergencyReportPage() {
 
           <button
             onClick={reset}
-            className="mt-4 text-xs text-[#858585] transition-colors hover:text-[#713cff]"
+            className="mt-4 text-xs text-[#858585] transition-colors hover:text-[#2563eb]"
           >
             ← File another report
           </button>
@@ -210,9 +210,9 @@ export default function EmergencyReportPage() {
           href="https://cybercrime.gov.in"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-purple-400"
+          className="flex items-center justify-center gap-2 rounded-xl border border-black/[0.06] bg-[#f9f9f9] py-3 text-sm font-semibold text-[#111111] transition-colors hover:border-blue-400"
         >
-          <Globe className="h-4 w-4 text-[#713cff]" /> Visit cybercrime.gov.in
+          <Globe className="h-4 w-4 text-[#2563eb]" /> Visit cybercrime.gov.in
         </a>
       </div>
 
@@ -223,13 +223,13 @@ export default function EmergencyReportPage() {
               <div key={s} className="flex items-center gap-2">
                 <span
                   className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold transition-colors ${
-                    step >= s ? "purple-gradient text-white" : "bg-[#f9f9f9] text-[#858585]"
+                    step >= s ? "blue-gradient text-white" : "bg-[#f9f9f9] text-[#858585]"
                   }`}
                 >
                   {s}
                 </span>
                 {s < 3 && (
-                  <span className={`h-0.5 w-12 rounded-full transition-colors ${step > s ? "bg-[#713cff]" : "bg-black/[0.08]"}`} />
+                  <span className={`h-0.5 w-12 rounded-full transition-colors ${step > s ? "bg-[#2563eb]" : "bg-black/[0.08]"}`} />
                 )}
               </div>
             ))}
@@ -249,7 +249,7 @@ export default function EmergencyReportPage() {
                   <select
                     value={form.state}
                     onChange={(e) => update("state", e.target.value)}
-                    className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-purple-400 focus:outline-none"
+                    className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-blue-400 focus:outline-none"
                   >
                     <option value="">Select state</option>
                     {STATES.map((s) => (
@@ -264,7 +264,7 @@ export default function EmergencyReportPage() {
                 <button
                   onClick={nextStep}
                   disabled={!canProceed}
-                  className="inline-flex items-center gap-2 rounded-xl purple-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-40"
+                  className="inline-flex items-center gap-2 rounded-xl blue-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-40"
                 >
                   Next <FileText className="h-4 w-4" />
                 </button>
@@ -283,7 +283,7 @@ export default function EmergencyReportPage() {
                   <select
                     value={form.incidentType}
                     onChange={(e) => update("incidentType", e.target.value)}
-                    className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-purple-400 focus:outline-none"
+                    className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-blue-400 focus:outline-none"
                   >
                     <option value="">Select type</option>
                     {INCIDENT_TYPES.map((t) => (
@@ -297,7 +297,7 @@ export default function EmergencyReportPage() {
                   <select
                     value={form.platform}
                     onChange={(e) => update("platform", e.target.value)}
-                    className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-purple-400 focus:outline-none"
+                    className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm focus:border-blue-400 focus:outline-none"
                   >
                     <option value="">Select platform</option>
                     {PLATFORMS.map((p) => (
@@ -327,7 +327,7 @@ export default function EmergencyReportPage() {
                 <button
                   onClick={nextStep}
                   disabled={!canProceed}
-                  className="inline-flex items-center gap-2 rounded-xl purple-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-40"
+                  className="inline-flex items-center gap-2 rounded-xl blue-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-40"
                 >
                   Next <FileText className="h-4 w-4" />
                 </button>
@@ -413,7 +413,7 @@ export default function EmergencyReportPage() {
                 "Job / task / lottery scams",
               ].map((t) => (
                 <li key={t} className="flex items-start gap-2">
-                  <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-[#713cff]" />
+                  <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-[#2563eb]" />
                   {t}
                 </li>
               ))}
@@ -427,7 +427,7 @@ export default function EmergencyReportPage() {
             </p>
             <a
               href="/assistant"
-              className="mt-3 inline-flex items-center gap-2 rounded-lg border border-black/[0.06] px-3 py-2 text-xs font-medium text-[#713cff] transition-colors hover:border-purple-200"
+              className="mt-3 inline-flex items-center gap-2 rounded-lg border border-black/[0.06] px-3 py-2 text-xs font-medium text-[#2563eb] transition-colors hover:border-blue-200"
             >
               <ShieldAlert className="h-3.5 w-3.5" /> Ask the AI Assistant
             </a>
@@ -458,7 +458,7 @@ function Field({
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           rows={rows ?? 3}
-          className="w-full resize-none rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm leading-relaxed placeholder:text-[#858585]/40 focus:border-purple-400 focus:outline-none"
+          className="w-full resize-none rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm leading-relaxed placeholder:text-[#858585]/40 focus:border-blue-400 focus:outline-none"
         />
       ) : (
         <input
@@ -466,7 +466,7 @@ function Field({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm placeholder:text-[#858585]/40 focus:border-purple-400 focus:outline-none"
+          className="w-full rounded-lg border border-black/[0.06] bg-[#f9f9f9] px-3 py-2 text-sm placeholder:text-[#858585]/40 focus:border-blue-400 focus:outline-none"
         />
       )}
     </div>

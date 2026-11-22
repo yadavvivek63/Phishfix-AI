@@ -80,7 +80,7 @@ export default function ImageScannerPage() {
               if (f) handleFile(f);
             }}
             onClick={() => inputRef.current?.click()}
-            className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-black/[0.06] bg-[#f9f9f9]/40 px-6 py-12 text-center transition-colors hover:border-purple-200"
+            className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-black/[0.06] bg-[#f9f9f9]/40 px-6 py-12 text-center transition-colors hover:border-blue-200"
           >
             {preview ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -104,10 +104,10 @@ export default function ImageScannerPage() {
         <div>
           {busy && (
             <div className="flex h-full min-h-[240px] flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-black/[0.06]/70 p-8 text-center">
-              <Loader2 className="h-8 w-8 animate-spin text-[#713cff]" />
+              <Loader2 className="h-8 w-8 animate-spin text-[#2563eb]" />
               <p className="text-sm text-[#858585]">Extracting text from image…</p>
               <div className="h-1.5 w-48 overflow-hidden rounded-full bg-[#f9f9f9]">
-                <div className="h-full rounded-full bg-[#713cff] transition-all" style={{ width: `${ocrProgress}%` }} />
+                <div className="h-full rounded-full bg-[#2563eb] transition-all" style={{ width: `${ocrProgress}%` }} />
               </div>
             </div>
           )}
@@ -127,7 +127,7 @@ export default function ImageScannerPage() {
       </div>
 
       <Card className="mt-5 p-5">
-        <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-[#713cff]">
+        <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-[#2563eb]">
           <ScanText className="h-4 w-4" /> Deepfake &amp; media analysis (framework)
         </h3>
         <p className="text-xs leading-relaxed text-[#858585]">

@@ -7,8 +7,8 @@
   --color-card: #ffffff;
   --color-card-2: #fafafa;
   --color-line: rgba(0, 0, 0, 0.06);
-  --color-cyan: #713cff;
-  --color-cyan-soft: #a78bfa;
+  --color-cyan: #2563eb;
+  --color-cyan-soft: #60a5fa;
   --color-text: #111111;
   --color-muted: #858585;
   --color-danger: #ef4444;
@@ -33,8 +33,8 @@ body {
 
 body {
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(113, 60, 255, 0.06), transparent 60%),
-    radial-gradient(900px 500px at -10% 10%, rgba(167, 139, 250, 0.04), transparent 55%),
+    radial-gradient(1200px 600px at 80% -10%, rgba(37, 99, 235, 0.06), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(96, 165, 250, 0.04), transparent 55%),
     #f3f2f0;
   min-height: 100vh;
 }
@@ -74,11 +74,11 @@ body {
       0 1px 3px rgba(0, 0, 0, 0.05),
       0 8px 24px rgba(0, 0, 0, 0.08);
   }
-  .glow-purple {
+  .glow-blue {
     box-shadow:
-      0 0 0 1px rgba(113, 60, 255, 0.15),
-      0 4px 20px -4px rgba(113, 60, 255, 0.3),
-      0 0 48px -10px rgba(113, 60, 255, 0.15);
+      0 0 0 1px rgba(37, 99, 235, 0.15),
+      0 4px 20px -4px rgba(37, 99, 235, 0.3),
+      0 0 48px -10px rgba(37, 99, 235, 0.15);
   }
   .text-glow {
     text-shadow: 0 0 24px rgba(113, 60, 255, 0.35);
@@ -119,8 +119,8 @@ body {
   }
   .grid-bg {
     background-image:
-      linear-gradient(rgba(113, 60, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(113, 60, 255, 0.03) 1px, transparent 1px);
+linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+       linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
   }
   .scrollbar-none {
@@ -129,11 +129,11 @@ body {
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
-  .purple-gradient {
-    background: linear-gradient(135deg, #713cff 0%, #a78bfa 100%);
+  .blue-gradient {
+    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
   }
-  .purple-text-gradient {
-    background: linear-gradient(135deg, #713cff 0%, #a78bfa 100%);
+  .blue-text-gradient {
+    background: linear-gradient(135deg, #2563eb 0%, #60a5fa 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -184,7 +184,7 @@ body {
   font-size: 9px;
 }
 .hm-map-wrap .leaflet-control-attribution a {
-  color: #713cff;
+  color: #2563eb;
 }
 .hm-map-wrap .leaflet-control-zoom a {
   background: #ffffff;
@@ -248,7 +248,7 @@ body {
 }
 .hm-popup-reports {
   margin: 6px 0 0;
-  color: #713cff;
+  color: #2563eb;
   font-size: 12px;
   font-weight: 600;
 }

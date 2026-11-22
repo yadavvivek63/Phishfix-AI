@@ -61,12 +61,12 @@ export default function SandboxPage() {
             onChange={(e) => setUrl(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && run()}
             placeholder="https://suspicious-site.xyz/login"
-            className="flex-1 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-4 py-2.5 text-sm text-[#111111] placeholder:text-[#858585]/60 focus:border-purple-400 focus:outline-none"
+            className="flex-1 rounded-xl border border-black/[0.06] bg-[#f9f9f9] px-4 py-2.5 text-sm text-[#111111] placeholder:text-[#858585]/60 focus:border-blue-400 focus:outline-none"
           />
           <button
             onClick={run}
             disabled={busy}
-            className="inline-flex items-center gap-2 rounded-xl purple-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-50"
+            className="inline-flex items-center gap-2 rounded-xl blue-gradient px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-50"
           >
             {busy ? <Loader2 className="h-4 w-4 animate-spin" /> : <Play className="h-4 w-4" />}
             {busy ? "Investigating…" : "Run investigation"}
@@ -95,7 +95,7 @@ export default function SandboxPage() {
             </Card>
             <Card className="p-4">
               <p className="text-[11px] uppercase tracking-wider text-[#858585]">Redirect risk</p>
-              <p className="mt-1 text-sm font-semibold capitalize text-[#713cff]">{report.redirects.risk}</p>
+              <p className="mt-1 text-sm font-semibold capitalize text-[#2563eb]">{report.redirects.risk}</p>
             </Card>
           </div>
 
@@ -120,24 +120,24 @@ export default function SandboxPage() {
 
           <div className="grid gap-4 lg:grid-cols-3">
             <Card className="p-5">
-              <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold"><Search className="h-4 w-4 text-[#713cff]" /> Domain reputation</h3>
+              <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold"><Search className="h-4 w-4 text-[#2563eb]" /> Domain reputation</h3>
               <p className="break-all text-xs text-[#858585]">Host: <span className="font-mono text-[#111111]">{report.host || "—"}</span></p>
               <p className="mt-1 break-all text-xs text-[#858585]">Registrable: <span className="font-mono text-[#111111]">{report.registrableDomain || "—"}</span></p>
             </Card>
             <Card className="p-5">
-              <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold"><ArrowRightLeft className="h-4 w-4 text-[#713cff]" /> Redirect analysis</h3>
+              <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold"><ArrowRightLeft className="h-4 w-4 text-[#2563eb]" /> Redirect analysis</h3>
               <p className="text-xs text-[#858585]">{report.redirects.note}</p>
             </Card>
             <Card className="p-5">
-              <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold"><KeyRound className="h-4 w-4 text-[#713cff]" /> Fake-login check</h3>
+              <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold"><KeyRound className="h-4 w-4 text-[#2563eb]" /> Fake-login check</h3>
               <p className="text-xs text-[#858585]">
                 Likelihood: <span className="font-semibold capitalize text-[#111111]">{report.fakeLogin}</span>. Based on credential-harvesting paths, brand spoofing and sensitive parameters.
               </p>
             </Card>
           </div>
 
-          <Card className="border-purple-200 p-5">
-            <h3 className="mb-1 text-sm font-semibold text-[#713cff]">Verdict</h3>
+          <Card className="border-blue-200 p-5">
+            <h3 className="mb-1 text-sm font-semibold text-[#2563eb]">Verdict</h3>
             <p className="text-sm leading-relaxed text-[#858585]">{report.verdict}</p>
             <p className="mt-2 text-[11px] text-[#858585]/70">{report.note}</p>
           </Card>

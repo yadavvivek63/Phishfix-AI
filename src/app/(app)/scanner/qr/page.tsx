@@ -73,12 +73,12 @@ export default function QrScannerPage() {
         <div className="space-y-4">
           <div className="inline-flex rounded-xl border border-black/[0.06] bg-[#f9f9f9] p-1">
             <button
-              className={`flex items-center gap-2 rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${tab === "qr" ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
+              className={`flex items-center gap-2 rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${tab === "qr" ? "bg-blue-50 text-[#2563eb]" : "text-[#858585] hover:text-[#111111]"}`}
             >
               <QrCode className="h-4 w-4" /> QR Code
             </button>
             <button
-              className={`flex items-center gap-2 rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${tab === "image" ? "bg-purple-50 text-[#713cff]" : "text-[#858585] hover:text-[#111111]"}`}
+              className={`flex items-center gap-2 rounded-lg px-4 py-1.5 text-sm font-medium transition-colors ${tab === "image" ? "bg-blue-50 text-[#2563eb]" : "text-[#858585] hover:text-[#111111]"}`}
             >
               <ScanText className="h-4 w-4" /> Screenshot (OCR)
             </button>
@@ -88,7 +88,7 @@ export default function QrScannerPage() {
             onDragOver={(e) => e.preventDefault()}
             onDrop={onDrop}
             onClick={() => inputRef.current?.click()}
-            className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-black/[0.06] bg-[#f9f9f9]/40 px-6 py-12 text-center transition-colors hover:border-purple-200"
+            className="flex cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed border-black/[0.06] bg-[#f9f9f9]/40 px-6 py-12 text-center transition-colors hover:border-blue-200"
           >
             {preview ? (
               // eslint-disable-next-line @next/next/no-img-element
@@ -115,7 +115,7 @@ export default function QrScannerPage() {
         </div>
 
         <div>
-          {busy && <Loader2 className="mx-auto h-8 w-8 animate-spin text-[#713cff]" />}
+          {busy && <Loader2 className="mx-auto h-8 w-8 animate-spin text-[#2563eb]" />}
           {!busy && result && (
             <div className="rounded-2xl glass p-5">
               <ScanResultView result={result} />
