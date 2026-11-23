@@ -65,7 +65,7 @@ const STATES = [
   "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
   "Kerala", "Madhya Pradesh", "Maharashtra", "Odisha", "Punjab",
   "Rajasthan", "Tamil Nadu", "Telangana", "Uttar Pradesh",
-  "Uttarakhand", "West Bengal", "Other",
+  "Uttarakhand", "West Bengal", "Other", 
 ];
 
 export default function EmergencyReportPage() {
